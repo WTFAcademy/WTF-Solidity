@@ -22,7 +22,7 @@ contract OtherContract {
 
     // 读取x
     function getX() external view returns(uint x){
-        x = _x;
+        return _x;
     }
 }
 
