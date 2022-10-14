@@ -61,7 +61,7 @@ contract Parents {
 带有`onlyOwner`修饰符的函数只能被`owner`地址调用，比如下面这个例子：
 ```solidity
    function changeOwner(address _newOwner) external onlyOwner{
-      owner = _newOwner; // 只有owner地址运行这个函数，并改变owner
+      owner = _newOwner; // 只有owner地址能运行这个函数，并改变owner
    }
 ```
 我们定义了一个`changeOwner`函数，运行他可以改变合约的`owner`，但是由于`onlyOwner`修饰符的存在，只有原先的`owner`可以调用，别人调用就会报错。这也是最常用的控制智能合约权限的方法。
