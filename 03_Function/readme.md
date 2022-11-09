@@ -6,40 +6,54 @@ tags:
   - wtfacademy
 ---
 
-# Solidity极简入门: 3. 函数类型
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+# WTF Solidity极简入门: 3. 函数类型
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
-欢迎关注我的推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
+推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
-WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/5akcruXrsk)
+社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在github（1024个star发课程认证，2048个star发社群NFT）: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+所有代码和教程开源在github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 
 ## Solidity中的函数
 solidity官方文档里把函数归到数值类型，但我觉得差别很大，所以单独分一类。我们先看一下solidity中函数的形式：
 ```solidity
-    function (<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
+    function <function name>(<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
 ```
 看着些复杂，咱们从前往后一个一个看（方括号中的是可写可不写的关键字）：
 
 1. `function`：声明函数时的固定用法，想写函数，就要以function关键字开头。
 
-2. `(<parameter types>)`：圆括号里写函数的参数，也就是要输入到函数的变量类型和名字。
+2. ` <function name>`：函数名。
 
-3. `{internal|external|public|private}`：函数可见性说明符，一共4种。没标明函数类型的，默认`internal`。
+3. `(<parameter types>)`：圆括号里写函数的参数，也就是要输入到函数的变量类型和名字。
+
+4. `{internal|external|public|private}`：函数可见性说明符，一共4种。没标明函数类型的，默认`public`。合约之外的函数，即"自由函数"，始终具有隐含`internal`可见性。
 
     - `public`: 内部外部均可见。(也可用于修饰状态变量，public变量会自动生成 `getter`函数，用于查询数值).
     - `private`: 只能从本合约内部访问，继承的合约也不能用（也可用于修饰状态变量）。
     - `external`: 只能从合约外部访问（但是可以用`this.f()`来调用，`f`是函数名）
     - `internal`: 只能从合约内部访问，继承的合约可以用（也可用于修饰状态变量）。
-4. `[pure|view|payable]`：决定函数权限/功能的关键字。`payable`（可支付的）很好理解，带着它的函数，运行的时候可以给合约转入`ETH`。`pure`和`view`的介绍见下一节。
 
-5. `[returns ()]`：函数返回的变量类型和名称。
+5. `[pure|view|payable]`：决定函数权限/功能的关键字。`payable`（可支付的）很好理解，带着它的函数，运行的时候可以给合约转入`ETH`。`pure`和`view`的介绍见下一节。
+
+6. `[returns ()]`：函数返回的变量类型和名称。
 
 ## 到底什么是`Pure`和`View`？
-我刚开始学`solidity`的时候，一直不理解`pure`跟`view`关键字，因为别的语言没有类似的关键字。`solidity`加入这两个关键字，我认为是因为`gas fee`。合约的状态变量存储在链上，`gas fee`很贵，如果不改写链上变量，就不用付`gas`。调用`pure`跟`view`的函数是不需要付gas的。
+我刚开始学`solidity`的时候，一直不理解`pure`跟`view`关键字，因为别的语言没有类似的关键字。`solidity`加入这两个关键字，我认为是因为`gas fee`。合约的状态变量存储在链上，`gas fee`很贵，如果不改变链上状态，就不用付`gas`。包含`pure`跟`view`关键字的函数是不改写链上状态的，因此用户直接调用他们是不需要付gas的（合约中非`pure`/`view`函数调用它们则会改写链上状态，需要付gas）。
+
+在以太坊中，以下语句被视为修改链上状态：
+
+1. 写入状态变量。
+2. 释放事件。
+3. 创建其他合同。
+4. 使用`selfdestruct`.
+5. 通过调用发送以太币。
+6. 调用任何未标记`view`或`pure`的函数。
+7. 使用低级调用（low-level calls）。
+8. 使用包含某些操作码的内联汇编。
 
 我画了一个马里奥插画，帮助大家理解。在插画里，我把合约中的状态变量（存储在链上）比作碧池公主，三种不同的角色代表不同的关键字。
 
@@ -73,7 +87,7 @@ solidity官方文档里把函数归到数值类型，但我觉得差别很大，
 ```solidity
     // pure: 纯纯牛马
     function addPure(uint256 _number) external pure returns(uint256 new_number){
-        new_number = _number+1;
+        new_number = _number + 1;
     }
 ```
 
@@ -127,5 +141,4 @@ solidity官方文档里把函数归到数值类型，但我觉得差别很大，
 ![3-2.png](./img/3-2.png)
 
 ## 总结
-在这一讲，我们介绍了`solidity`中的函数类型，比较难理解的是`pure`和`view`，在其他语言中没出现过。`solidity`引入`pure`和`view`关键字主要是为了节省`gas`和控制函数权限，这两种方程都是不消耗`gas`的。
-
+在这一讲，我们介绍了`solidity`中的函数类型，比较难理解的是`pure`和`view`，在其他语言中没出现过。`solidity`引入`pure`和`view`关键字主要是为了节省`gas`和控制函数权限：如果用户直接调用`pure`/`view`方程是不消耗`gas`的（合约中非`pure`/`view`函数调用它们则会改写链上状态，需要付gas）。

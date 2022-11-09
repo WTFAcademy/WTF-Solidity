@@ -7,15 +7,15 @@ tags:
   - if-else/for/while/ternary
 ---
 
-# Solidity极简入门: 10. 控制流，用solidity实现插入排序
+# WTF Solidity极简入门: 10. 控制流，用solidity实现插入排序
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
-欢迎关注我的推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
+推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
-WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/5akcruXrsk)
+社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在github（1024个star发课程认证，2048个star发社群NFT）: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+所有代码和教程开源在github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 这一讲，我们将介绍`solidity`中的控制流，然后讲如何用`solidity`实现插入排序（`InsertionSort`），一个看起来简单，但实际上很容易写出`bug`的程序。
@@ -89,7 +89,7 @@ function ternaryTest(uint256 x, uint256 y) public pure returns(uint256){
 ### 写在前面：90%以上的人用`solidity`写插入算法都会出错。
 
 ### 插入排序
-排序算法解决的问题是将无序的一组数字，例如`[2, 5, 3, 1]`，从小到大一次排列好。插入排序（`InsertionSort`）是最简单的一种排序算法，也是很多人学习的第一个算法。它的思路很简答，从前往后，依次将每一个数和排在他前面的数字比大小，如果比前面的数字小，就互换位置。示意图：
+排序算法解决的问题是将无序的一组数字，例如`[2, 5, 3, 1]`，从小到大依次排列好。插入排序（`InsertionSort`）是最简单的一种排序算法，也是很多人学习的第一个算法。它的思路很简单，从前往后，依次将每一个数和排在他前面的数字比大小，如果比前面的数字小，就互换位置。示意图：
 
 ![插入排序](https://i.pinimg.com/originals/92/b0/34/92b034385c440e08bc8551c97df0a2e3.gif)
 

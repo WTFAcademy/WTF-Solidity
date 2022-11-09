@@ -3,13 +3,13 @@ title: 47. 可升级合约
 tags:
   - solidity
   - proxy
-  - openzepplin
+  - OpenZeppelin
 
 ---
 
-# Solidity极简入门: 47. 可升级合约
+# WTF Solidity极简入门: 47. 可升级合约
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
 推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
@@ -19,7 +19,7 @@ tags:
 
 -----
 
-这一讲，我们将介绍可升级合约（Upgradeable Contract）。教学用的合约由`openzepplin`中的合约简化而来，可能有安全问题，不应用于生产环境。
+这一讲，我们将介绍可升级合约（Upgradeable Contract）。教学用的合约由`OpenZeppelin`中的合约简化而来，可能有安全问题，不要用于生产环境。
 
 ## 可升级合约
 
@@ -118,14 +118,20 @@ contract Logic2 {
 ## `Remix`实现
 
 1. 部署新旧逻辑合约`Logic1`和`Logic2`。
+![47-2.png](./img/47-2.png)
+![47-3.png](./img/47-3.png)
 
 2. 部署可升级合约`SimpleUpgrade`，将`implementation`地址指向把旧逻辑合约。
+![47-4.png](./img/47-4.png)
 
 3. 利用选择器`0xc2985578`，在代理合约中调用旧逻辑合约`Logic1`的`foo()`函数，将`words`的值改为`"old"`。
+![47-5.png](./img/47-5.png)
 
 4. 调用`upgrade()`，将`implementation`地址指向新逻辑合约`Logic2`。
+![47-6.png](./img/47-6.png)
 
 5. 利用选择器`0xc2985578`，在代理合约中调用新逻辑合约`Logic2`的`foo()`函数，将`words`的值改为`"new"`。
+![47-7.png](./img/47-7.png)
 
 ## 总结
 

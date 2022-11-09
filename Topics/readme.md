@@ -10,6 +10,10 @@
 
 **第5讲：Dune，使用Dune可视化区块链数据** 【[文章](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Tools/TOOL05_Dune/readme.md)】
 
+**第6讲：Hardhat，以太坊开发环境** 【[文章](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Tools/TOOL06_Hardhat/readme.md)】
+
+**第7讲：Foundry，以Solidity为中心的开发工具包** 【[代码](./Tools/TOOL07_Foundry/readme.md)】
+
 ### `ERC721`
 **第1讲：ERC721库：Address, Strings, Context** 【[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/ERC721)】 【[文章](https://mirror.xyz/ninjak.eth/PAsIFLAmEoMufZsXlX0NWsVF8DHpHz3OrYlooosy9Ho)】
 
@@ -23,4 +27,10 @@
 
 ### `合约安全`
 
-**第1讲：Metamask项目方给Solidity程序员的16个安全建议**【[代码](https://github.com/AmazingAng/WTFSolidity/tree/main/Topics/Security/Consensys2020)】 【[文章](https://mirror.xyz/ninjak.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
+**第1讲：Metamask项目方给Solidity程序员的16个安全建议**【[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Translation/Consensys2020)】 【[文章](https://mirror.xyz/ninjak.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
+
+### `翻译`
+
+**第1讲：Metamask项目方给Solidity程序员的16个安全建议**【[文章](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Translation/Consensys2020)】 【[Mirror](https://mirror.xyz/ninjak.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
+
+**第2讲：深入EVM**【[文章](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Translation/DiveEVM2017)】

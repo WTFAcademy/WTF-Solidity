@@ -3,13 +3,13 @@ title: 49. 透明代理
 tags:
   - solidity
   - proxy
-  - openzepplin
+  - OpenZeppelin
 
 ---
 
-# Solidity极简入门: 49. 通用可升级代理
+# WTF Solidity极简入门: 49. 通用可升级代理
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
 推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
@@ -19,7 +19,7 @@ tags:
 
 -----
 
-这一讲，我们将介绍代理合约中选择器冲突（Selector Clash）的另一个解决办法：通用可升级代理（UUPS，universal upgradeable proxy standard）。教学代码由`OpenZepplin`的`UUPSUpgradeable`简化而成，不应用于生产。
+这一讲，我们将介绍代理合约中选择器冲突（Selector Clash）的另一个解决办法：通用可升级代理（UUPS，universal upgradeable proxy standard）。教学代码由`OpenZeppelin`的`UUPSUpgradeable`简化而成，不应用于生产。
 
 ## UUPS
 
@@ -120,15 +120,25 @@ contract UUPS2{
 
 1. 部署UUPS新旧逻辑合约`UUPS1`和`UUPS2`。
 
-2. 部署UUPS代理合约`UUPSProxy`，将`implementation`地址指向把旧逻辑合约`UUPS1`。
+![demo](./img/49-3.jpg)
+
+2. 部署UUPS代理合约`UUPSProxy`，将`implementation`地址指向旧逻辑合约`UUPS1`。
+
+![demo](./img/49-4.jpg)
 
 3. 利用选择器`0xc2985578`，在代理合约中调用旧逻辑合约`UUPS1`的`foo()`函数，将`words`的值改为`"old"`。
 
-4. 利用在线ABI编码器(HashEx)[https://abi.hashex.org/]获得二进制编码，调用升级函数`upgrade()`，将`implementation`地址指向新逻辑合约`UUPS2`。
+![demo](./img/49-5.jpg)
+
+4. 利用在线ABI编码器[HashEx](https://abi.hashex.org/)获得二进制编码，调用升级函数`upgrade()`，将`implementation`地址指向新逻辑合约`UUPS2`。
 
 ![编码](./img/49-3.png)
 
+![demo](./img/49-6.jpg)
+
 5. 利用选择器`0xc2985578`，在代理合约中调用新逻辑合约`UUPS2`的`foo()`函数，将`words`的值改为`"new"`。
+
+![demo](./img/49-7.jpg)
 
 ## 总结
 

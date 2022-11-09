@@ -1,17 +1,21 @@
-![](./img/logo2.jpeg)
+![](../../img/logo2.jpeg)
 
 # WTF Solidity
-# WTF Solidity Tutorial: 10. Control Flow, and Solidity Implementation of Insertion Sort
 
-Recently, I have been relearning Solidity, consolidating the finer details, and also writing a "WTF Solidity Tutorial" for newbies to learn. Lectures are updated 1~3 times weekly. 
+[中文](https://github.com/AmazingAng/WTF-Solidity)  / English
 
-Twitter: [@0xAA_Science](https://twitter.com/0xAA_Science)
+Recently, I have been relearning Solidity, consolidating the finer details, and writing a "WTF Solidity Tutorial" for newbies. Lectures are updated 1~3 times weekly. 
 
-Discord: [Link](https://discord.gg/5akcruXrsk)
+Twitter: [@WTFAcademy_](https://twitter.com/WTFAcademy_) |  [@0xAA_Science](https://twitter.com/0xAA_Science)
 
-All codes and tutorials are open-source and available on GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Community: [Discord](https://discord.wtf.academy) | [Website: wtf.academy](https://wtf.academy)
 
-## 入门
+Tutorials and codes are open-sourced on github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+
+**NOTE: the English Version of WTF Solidity is preliminary and requires further community review.**
+
+## Intro
+
 **Chapter 1: HelloWeb3 (3 lines of code)**：[Code](./01_HelloWeb3_en) | [Tutorial](./01_HelloWeb3_en/readme.md)
 
 **Chapter 2: Value Type**：[Code](./02_ValueTypes_en) | [Tutorial](./02_ValueTypes_en/readme.md)
@@ -28,12 +32,22 @@ All codes and tutorials are open-source and available on GitHub: [github.com/Ama
 
 **Chapter 8: Default Value**：[Code](./08_InitialValue_en) | [Tutorial](./08_InitialValue_en/readme.md)
 
-**Chapter9: Constant（constant/immutable）**：[Code](./09_Constant_en) | [Tutorial](./09_Constant/readme.md_en)
+**Chapter 9: Constant（constant/immutable）**：[Code](./09_Constant_en) | [Tutorial](./09_Constant/readme.md_en)
 
 **Chapter 10: Control Flow**：[Code](./10_InsertionSort_en) | [Tutorial](./10_InsertionSort_en/readme.md)
 
+**Chapter 11: Modifiers**：[Code](./11_Modifier_en) | [Tutorial](./11_Modifier_en/readme.md)
 
-## WT Contributors
+**Chapter 12: Event**：[Code](./12_Event_en) | [Tutorial](./12_Event_en/readme.md)
+
+**Chapter 13: Inheritance**：[Code](./13_Inheritance_en) | [Tutorial](./13_Inheritance_en/readme.md)
+
+**Chapter 14: Interface**：[Code](./14_Interface_en) | [Tutorial](./14_Interface_en/readme.md)
+
+**Chapter 15: Errors**：[Code](./15_Errors_en) | [Tutorial](./15_Errors_en/readme.md)
+
+
+## WTF Contributors
 <div align="center">
   <h4 align="center">
     Contributors are the basis of WTF Academy

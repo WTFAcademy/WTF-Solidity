@@ -7,9 +7,9 @@ tags:
 
 ---
 
-# Solidity极简入门: 43. 线性释放
+# WTF Solidity极简入门: 43. 线性释放
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
 推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
@@ -19,7 +19,7 @@ tags:
 
 -----
 
-这一讲，我们将介绍代币归属条款，并写一个线性释放`ERC20`代币的合约。代码由`OpenZepplin`的`VestingWallet`合约简化而来。
+这一讲，我们将介绍代币归属条款，并写一个线性释放`ERC20`代币的合约。代码由`OpenZeppelin`的`VestingWallet`合约简化而来。
 
 ## 代币归属条款
 

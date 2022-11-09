@@ -7,15 +7,15 @@ tags:
   - inheritance
 ---
 
-# Solidity极简入门: 13. 继承
+# WTF Solidity极简入门: 13. 继承
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
-欢迎关注我的推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
+推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
-WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/5akcruXrsk)
+社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在github（1024个star发课程认证，2048个star发社群NFT）: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+所有代码和教程开源在github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 这一讲，我们介绍`solidity`中的继承（`inheritance`），包括简单继承，多重继承，以及修饰器（`modifier`）和构造函数（`constructor`）的继承。
@@ -27,6 +27,11 @@ WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/
 - `virtual`: 父合约中的函数，如果希望子合约重写，需要加上`virtual`关键字。
 
 - `override`：子合约重写了父合约中的函数，需要加上`override`关键字。
+
+**注意**：用`override`修饰`public`变量，会重写与变量同名的`getter`函数，例如：
+```solidity
+mapping(address => uint256) public override balanceOf;
+```
 
 ### 简单继承
 我们先写一个简单的爷爷合约`Yeye`，里面包含1个`Log`事件和3个`function`: `hip()`, `pop()`, `yeye()`，输出都是”Yeye”。
@@ -72,7 +77,7 @@ contract Baba is Yeye{
 
 继承时要按辈分最高到最低的顺序排。比如我们写一个`Erzi`合约，继承`Yeye`合约和`Baba`合约，那么就要写成`contract Erzi is Yeye, Baba`，而不能写成`contract Erzi is Baba, Yeye`，不然就会报错。
 如果某一个函数在多个继承的合约里都存在，比如例子中的`hip()`和`pop()`，在子合约里必须重写，不然会报错。
-重写在多个父合约中重名函数时，`override`关键字后面要加上所有父合约名字，例如`override(Yeye, Baba)`。
+重写在多个父合约中都重名的函数时，`override`关键字后面要加上所有父合约名字，例如`override(Yeye, Baba)`。
 例子：
 ```solidity
 contract Erzi is Yeye, Baba{
@@ -112,10 +117,13 @@ contract Identifier is Base1 {
     }
 }
 ```
-上面的Identifier可以直接在代码中使用exactDividedBy2And3这个修饰器，也可以像下面一样重写修饰器。
+
+`Identifier`合约可以直接在代码中使用父合约中的`exactDividedBy2And3`修饰器，也可以利用`override`关键字重写修饰器：
+
 ```solidity
     modifier exactDividedBy2And3(uint _a) override {
         _;
+        require(_a % 2 == 0 && _a % 3 == 0);
     }
 ```
 

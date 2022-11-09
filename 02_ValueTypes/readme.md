@@ -6,15 +6,15 @@ tags:
   - wtfacademy
 ---
 
-# Solidity极简入门: 2. 数值类型
+# WTF Solidity极简入门: 2. 数值类型
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
-欢迎关注我的推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
+推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
-WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/5akcruXrsk)
+社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在github（1024个star发课程认证，2048个star发社群NFT）: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+所有代码和教程开源在github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 
@@ -38,11 +38,11 @@ WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/
 ```
 布尔值的运算符，包括：
 
-- ! （逻辑非）
-- && （逻辑与， "and" ）
-- || （逻辑或， "or" ）
-- == （等于）
-- != （不等于）
+- `!` （逻辑非）
+- `&&` （逻辑与， "and" ）
+- `||` （逻辑或， "or" ）
+- `==` （等于）
+- `!=` （不等于）
 
 代码：
 ```solidity
@@ -80,7 +80,7 @@ WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/
 大家可以跑一下代码，看看这4个变量分别是多少。答对奖励个`POAP`？
 
 ### 3. 地址类型
-地址类型(address)存储一个 20 字节的值（以太坊地址的大小）。地址类型也有成员变量，并作为所有合约的基础。有普通的地址和可以转账`ETH`的地址（`payable`）。`payable`的地址拥有`balance`和`transfer()`两个成员，方便查询`ETH`余额以及转账。
+地址类型(address)存储一个 20 字节的值（以太坊地址的大小）。地址类型也有成员变量，并作为所有合约的基础。有普通的地址和可以转账`ETH`的地址（`payable`）。其中，`payable`修饰的地址相对普通地址多了`transfer`和`send`两个成员。在`payable`修饰的地址中，`send`执行失败不会影响当前合约的执行（但是返回false值，需要开发人员检查`send`返回值）。`balance`和`transfer()`，可以用来查询`ETH`余额以及安全转账（内置执行失败的处理）。
 
 代码
 ```solidity
@@ -107,7 +107,7 @@ WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/
 `_byte`变量存储`_byte32`的第一个字节，为`0x4d`。
 
 ### 5. 枚举 enum
-枚举（`enum`）是`solidity`中用户定义的数据类型。它主要用于为`uint`分配名称，是程序易于阅读和维护。它与`C语言`中的`enum`类似，把名称从`0`开始`uint`表示：
+枚举（`enum`）是`solidity`中用户定义的数据类型。它主要用于为`uint`分配名称，使程序易于阅读和维护。它与`C语言`中的`enum`类似，使用名称来代替从`0`开始的`uint`：
 ```solidity
     // 用enum将uint 0， 1， 2表示为Buy, Hold, Sell
     enum ActionSet { Buy, Hold, Sell }

@@ -7,15 +7,15 @@ tags:
   - storage/memory/calldata
 ---
 
-# Solidity极简入门: 5. 变量数据存储和作用域 storage/memory/calldata
+# WTF Solidity极简入门: 5. 变量数据存储和作用域 storage/memory/calldata
 
-我最近在重新学solidity，巩固一下细节，也写一个“Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
+我最近在重新学solidity，巩固一下细节，也写一个“WTF Solidity极简入门”，供小白们使用（编程大佬可以另找教程），每周更新1-3讲。
 
-欢迎关注我的推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
+推特：[@0xAA_Science](https://twitter.com/0xAA_Science)
 
-WTF技术社群discord，内有加微信群方法：[链接](https://discord.gg/5akcruXrsk)
+社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在github（1024个star发课程认证，2048个star发社群NFT）: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+所有代码和教程开源在github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 
@@ -57,7 +57,7 @@ solidity数据存储位置有三类：`storage`，`memory`和`calldata`。不同
 **Example:**
 ![5-2.png](./img/5-2.png)
 
-2. `storage`赋值给`memory`，会创建独立的复本，修改其中一个不会影响另一个；反之亦然。例子：
+2. `storage`赋值给`memory`，会创建独立的副本，修改其中一个不会影响另一个；反之亦然。例子：
 ```solidity
     uint[] x = [1,2,3]; // 状态变量：数组 x
     
@@ -75,7 +75,7 @@ solidity数据存储位置有三类：`storage`，`memory`和`calldata`。不同
 
 3. `memory`赋值给`memory`，会创建引用，改变新变量会影响原变量。
 
-4. 其他情况，变量赋值给`storage`，会创建独立的复本，修改其中一个不会影响另一个。
+4. 其他情况，变量赋值给`storage`，会创建独立的副本，修改其中一个不会影响另一个。
 
 ## 变量的作用域
 `Solidity`中变量按作用域划分有三种，分别是状态变量（state variable），局部变量（local variable）和全局变量(global variable)
