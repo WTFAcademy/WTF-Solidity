@@ -134,11 +134,17 @@
 
 **S02：选择器碰撞**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S02_SelectorClash) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S02_SelectorClash/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/5rwcsBZzphdlKZj4MoIpn8aqwQ1MzQ8qy50ZEGNU_HU)
 
-**S03：中心化风险**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S03_Centralization) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S03_Centralization/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/0MlTKdaSGD9-A9WIbgbtrDlAazg-8DLpTJv7l8vsq3c)
+**S03：中心化**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S03_Centralization) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S03_Centralization/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/0MlTKdaSGD9-A9WIbgbtrDlAazg-8DLpTJv7l8vsq3c)
 
-**S04：权限管理漏洞**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S04_AccessControlExploit) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S04_AccessControlExploit/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/lWnJZJYygZtqe0GFwH6bJg80t2NaSCfdRXCh0EDHxqs)
+**S04：权限管理**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S04_AccessControlExploit) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S04_AccessControlExploit/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/lWnJZJYygZtqe0GFwH6bJg80t2NaSCfdRXCh0EDHxqs)
 
-**S05：整型溢出漏洞**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S05_Overflow) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S05_Overflow/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/FCRPHFa5JkCuRVSIrQQubuDPwrAfZctZnjWTaqZpcRU)
+**S05：整型溢出**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S05_Overflow) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S05_Overflow/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/FCRPHFa5JkCuRVSIrQQubuDPwrAfZctZnjWTaqZpcRU)
+
+**S06：签名重放**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S06_SignatureReplay) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S06_SignatureReplay/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/hHQO1EGe0vapiejyIrP8bcuPm50Djlse2MareeHLDwE)
+
+**S07：坏随机数**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S07_BadRandomness) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S07_BadRandomness/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/5NQbE-url7o8OV5UtpTPEkMEVwTZqdDIRYDMiG1bECw)
+
+**S08：绕过合约检查**：[代码](https://github.com/AmazingAng/WTFSolidity/blob/main/S08_ContractCheck) | [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/S08_ContractCheck/readme.md) | [Mirror](https://mirror.xyz/ninjak.eth/EbA6ZmPleFPtMgdVqRf65Ib8Hab_gIgt5Q3c0INy9mg)
 
 ## 主题
 ### `工具`
