@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 
 contract OtherContract {
     uint256 private _x = 0; // state variable x
@@ -13,7 +13,7 @@ contract OtherContract {
         return address(this).balance;
     }
 
-    // set the value of _x, as well as receving ETH (payable)
+    // set the value of _x, as well as receiving ETH (payable)
     function setX(uint256 x) external payable{
         _x = x;
         // emit Log event when receiving ETH

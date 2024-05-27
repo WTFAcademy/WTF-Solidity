@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 contract ArrayTypes {
 
     // 固定长度 Array
@@ -32,7 +32,7 @@ contract ArrayTypes {
     }
 }
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 contract StructTypes {
     // 结构体 Struct
     struct Student{
@@ -48,14 +48,24 @@ contract StructTypes {
         _student.score = 100;
     }
 
-     // 方法2:直接引用状态变量的struct
+    // 方法2:直接引用状态变量的struct
     function initStudent2() external{
         student.id = 1;
         student.score = 80;
     }
+    
+    // 方法3:构造函数式
+    function initStudent3() external {
+        student = Student(3, 90);
+    }
+
+    // 方法4:key value
+    function initStudent4() external {
+        student = Student({id: 4, score: 60});
+    }
 }
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 contract EnumTypes {
     // 将uint 0， 1， 2表示为Buy, Hold, Sell
     enum ActionSet { Buy, Hold, Sell }

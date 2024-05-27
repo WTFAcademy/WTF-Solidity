@@ -4,7 +4,7 @@ Recently, I have been revisiting Solidity, consolidating the finer details, and 
 
 Twitter: [@0xAA_Science](https://twitter.com/0xAA_Science) | [@WTFAcademy_](https://twitter.com/WTFAcademy_)
 
-Community: [Discord](https://discord.wtf.academy)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
+Community: [Discord](https://discord.gg/5akcruXrsk)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
 
 Codes and tutorials are open source on GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
@@ -21,13 +21,13 @@ In Solidity, variables declared but not assigned have their initial/default valu
 - `string`: `""`
 - `int`: `0`
 - `uint`: `0`
-- `enum`: first element in enumeration
+- `enum`: first element in enumeration 
 - `address`: `0x0000000000000000000000000000000000000000` (or `address(0)`)
 - `function`
-    - `internal`: blank equation
-    - `external`: blank equation
+    - `internal`: blank function
+    - `external`: blank function
 
-You can use `getter` function of `public` variables to confirm the above initial values:
+You can use the `getter` function of `public` variables to confirm the above initial values:
 
 ```solidity
     bool public _bool; // false
@@ -39,8 +39,8 @@ You can use `getter` function of `public` variables to confirm the above initial
     enum ActionSet {Buy, Hold, Sell}
     ActionSet public _enum; // first element 0
 
-    function fi() internal{} // internal blank equation
-    function fe() external{} // external blank equation
+    function fi() internal{} // internal blank function
+    function fe() external{} // external blank function
 ```
 
 ### Initial values of reference types
@@ -50,16 +50,16 @@ You can use `getter` function of `public` variables to confirm the above initial
 
 - `array`
     - dynamic array: `[]`
-    - static array（fixed-length): a static array where all members set to their default values.
+    - static array（fixed-length): a static array where all members are set to their default values.
 
-You can use `getter` function of `public` variables to confirm initial values:
+You can use the `getter` function of `public` variables to confirm initial values:
 
 ```solidity
     // reference types
     uint[8] public _staticArray; // a static array which all members set to their default values[0,0,0,0,0,0,0,0]
     uint[] public _dynamicArray; // `[]`
     mapping(uint => address) public _mapping; // a mapping which all members set to their default values
-    // a struct which all members set to their default values 0, 0
+    // a struct in which all members are set to their default values of 0, 0
     struct Student{
         uint256 id;
         uint256 score; 
@@ -85,10 +85,10 @@ You can use `getter` function of `public` variables to confirm initial values:
 
     ![](./img/8-1_en.jpg)
 
-- After using the `delete` operator, the value of the variables are reset to their initial values.
+- After using the `delete` operator, the values of the variables are reset to their initial values.
 
     ![](./img/8-2_en.jpg)
 
 ## Summary
 
-In this section, we introduced the initial values of variables in Solidity. When a variable is declared but not assigned, its value defaults to the initial value, which is equivalent as `0` represented in its type. The `delete` operator can reset the value of the variable to the initial value.
+In this section, we introduced the initial values of variables in Solidity. When a variable is declared but not assigned, its value defaults to the initial value, which is equivalent to `0` represented in its type. The `delete` operator can reset the value of the variable to the initial value.

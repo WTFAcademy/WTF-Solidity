@@ -68,7 +68,7 @@ solc --bin --asm c.sol
 
 打开 Etherscan，您应该看到该交易的输入数据是 Solidity 编译器生成的字节码。
 
-在处理此交易时，EVM 会将输入数据作为代码执行。*Voila*，合同诞生了。
+在处理此交易时，EVM 会将输入数据作为代码执行。*Voila*，合约诞生了。
 
 ## What The Bytecode Is Doing
 
@@ -361,7 +361,7 @@ contract C {
 
 为了处理构造函数中的参数，部署代码将 ABI 参数从 `calldata`​ 的末尾复制到内存中，然后从内存复制到堆栈中。
 
-## A Contract That Creats Contracts
+## A Contract That Creates Contracts
 
 `FooFactory`​ 合约可以通过调用 `makeNewFoo`​ 创建新的 `Foo`​ 实例：
 

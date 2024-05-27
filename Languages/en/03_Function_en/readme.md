@@ -1,33 +1,34 @@
-#  WTF Solidity Tutorial: 3. Function type
+#  WTF Solidity Tutorial: 3. Function
 
 Recently, I have been revisiting Solidity, consolidating the finer details, and writing "WTF Solidity" tutorials for newbies. 
 
 Twitter: [@0xAA_Science](https://twitter.com/0xAA_Science) | [@WTFAcademy_](https://twitter.com/WTFAcademy_)
 
-Community: [Discord](https://discord.wtf.academy)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
+Community: [Discord](https://discord.gg/5akcruXrsk)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
 
 Codes and tutorials are open source on GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 
 ---
 
-## Function in Solidity
+## Function
 
-Function is classified into values type by solidity document, but I put it a separate category, since there is a big difference. Let's take a look at solidity functions:
+Here's the format of a function in Solidity:
 
 ```solidity
     function <function name>(<parameter types>) [internal|external] [pure|view|payable] [returns (<return types>)]
 ```
 
-kind of complicated, let's move forward one by one (keyword in square brackets is optional):
+It may seem complex, but let's break it down piece by piece (square brackets indicate optional keywords):
 
-1. `function`: Start with the keyword `function`.
 
-2. `<function name>`: Name of the function.
+1. `function`: To write a function, you need to start with the keyword `function`.
 
-3. `(<parameter types>)`: The input parameter types and names of the function.
+2. `<function name>`: The name of the function.
 
-3. `[internal|external|public|private]`: Function visibility specifiers. There are 4 kinds. `public` is the default visibility if left empty:
+3. `(<parameter types>)`: The input parameter types and names.
+
+3. `[internal|external|public|private]`: Function visibility specifiers. There is no default visibility, so you must specify it for each function. There are 4 kinds of them:
 
    - `public`: Visible to all.
 
@@ -35,7 +36,7 @@ kind of complicated, let's move forward one by one (keyword in square brackets i
 
    - `external`: Can only be called from other contracts. But can also be called by `this.f()` inside the contract, where `f` is the function name. 
 
-   - `internal`: Can only be accessed internal and by contracts deriving from it.
+   - `internal`: Can only be accessed internally and by contracts deriving from it.
 
     **Note 1**: `public` is the default visibility for functions.
     
@@ -49,7 +50,7 @@ kind of complicated, let's move forward one by one (keyword in square brackets i
 
 ## WTF is `Pure` and `View`?
 
-When I started learning `solidity`, I didn't understand `pure` and `view` at all, since they are not common in other languages. `solidity` added these two keywords, because of `gas fee`. The contract state variables are stored on block chain, and `gas fee` is very expensive. If you don't rewrite these variables, you don't need to pay `gas`. You don't need to pay `gas` for calling  `pure` and `view` functions.
+When I started learning `solidity`, I didn't understand `pure` and `view` at all, since they are not common in other languages. `solidity` added these two keywords, because of `gas fee`. The contract state variables are stored on the blockchain, and the `gas fee` is very expensive. If you don't rewrite these variables, you don't need to pay `gas`. You don't need to pay `gas` for calling  `pure` and `view` functions.
 
 The following statements are considered modifying the state:
 
@@ -70,13 +71,13 @@ The following statements are considered modifying the state:
 8. Using inline assembly that contains certain opcodes.
 
 
-I drew a Mario cartton to visualize `pure` and `view`. In the picture, the state variable is represented by Princess Peach, keywards are represented by three different characters.
+I drew a Mario cartoon to visualize `pure` and `view`. In the picture, the state variable is represented by Princess Peach, keywords are represented by three different characters.
 
-![WTH is pure and view in solidity?](https://images.mirror-media.xyz/publication-images/1B9kHsTYnDY_QURSWMmPb.png?height=1028&width=1758)
+![WHAT is pure and view in solidity?](https://images.mirror-media.xyz/publication-images/1B9kHsTYnDY_QURSWMmPb.png?height=1028&width=1758)
 
-- `pure` : Functions containing `pure` keyword cannot read nor write state variables on-chain. Just like the little monster, it can't see or touch Princess Peach.
+- `pure`: Functions containing `pure` keywords cannot read nor write state variables on-chain. Just like the little monster, it can't see or touch Princess Peach.
 
-- `view` : Functions containing `view` keyword can read but cannot write on-chain state variables. Similar to Mario, able to see Princess but cannot touch.
+- `view`: Functions containing `view` keyword can read but cannot write on-chain state variables. Similar to Mario, able to see Princess but cannot touch.
 
 - Without `pure` and `view`: Functions can both read and write state variables. Like the `boss` can do whatever he wants.
 
@@ -88,7 +89,7 @@ We define a state variable `number = 5`
 
 ```solidity
     // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.4;
+    pragma solidity ^0.8.21;
     contract FunctionTypes{
         uint256 public number = 5;
 ```
@@ -102,7 +103,7 @@ Define an `add()` function, add 1 to `number` on every call.
     }
 ```
 
-If `add()` contains `pure` keyword, i.e. `function add() pure external`, it will result in an error. Because `pure` cannot read state variable in contract nor write. So what can `pure` do ? i.e. you can pass a parameter `_number` to function, let function returns `_number + 1`.
+If `add()` contains `pure` keyword, i.e. `function add() pure external`, it will result in an error. Because `pure` cannot read state variables in contract nor write. So what can `pure` do? i.e. you can pass a parameter `_number` to function, let function returns `_number + 1`.
 
 ```solidity
     // pure
@@ -114,7 +115,7 @@ If `add()` contains `pure` keyword, i.e. `function add() pure external`, it will
 **Example:**
 ![3-3.png](./img/3-3.png)
 
-If `add()` contains `view` , i.e. `function add() view external`, it will also result in error. Because `view` can read, but cannot write state variable. We can modify the function as follows:
+If `add()` contains `view`, i.e. `function add() view external`, it will also result in an error. Because `view` can read, but cannot write state variables. We can modify the function as follows:
 
 ```solidity
     // view
@@ -140,7 +141,7 @@ If `add()` contains `view` , i.e. `function add() view external`, it will also r
     }
 ```
 
-Here we defined an `internal minus()` function, `number` will decrease 1 each time function is called. Since `internal` function can only be called within the contract itself. Therefore, we need to define an `external` `minusCall()` function to call `minus()` internally.
+Here we defined an `internal minus()` function, `number` will decrease 1 each time the function is called. Since the `internal` function can only be called within the contract itself, we need to define an `external` `minusCall()` function to call `minus()` internally.
 
 **Example:**
 ![3-1.png](./img/3-1.png)
@@ -155,11 +156,11 @@ Here we defined an `internal minus()` function, `number` will decrease 1 each ti
     }
 ```
 
-We defined an `external payable minusPayable()` function, which calls `minus()` and return `ETH` balance of the current contract (`this` keyword can let us query current contract address). Since the funciton is `payable`, we can send 1 `ETH` to the contract when calling `minusPayable()`.
+We defined an `external payable minusPayable()` function, which calls `minus()` and return `ETH` balance of the current contract (`this` keyword can let us query the current contract address). Since the function is `payable`, we can send 1 `ETH` to the contract when calling `minusPayable()`.
 
 ![](https://images.mirror-media.xyz/publication-images/ETDPN8myq7jFfAL8CUAFt.png?height=148&width=588)
 
-We can see that contract balance is 1 `ETH` in return message.
+We can see that the contract balance is 1 `ETH` in the return message.
 
 ![](https://images.mirror-media.xyz/publication-images/nGZ2pz0MvzgXuKrENJPYf.png?height=128&width=1130)
 
@@ -168,4 +169,4 @@ We can see that contract balance is 1 `ETH` in return message.
 
 ## Summary
 
-In this section, we introduced `solidity` function type. `pure` and `view` keywords are difficult to understand, since they are not common in other languages. You don't need to pay gas fees for calling `pure` or `view` functions, since they don't modify the on-chain data.
+In this section, we introduced `solidity` function type. `pure` and `view` keywords are difficult to understand since they are not common in other languages. You don't need to pay gas fees for calling `pure` or `view` functions, since they don't modify the on-chain data.

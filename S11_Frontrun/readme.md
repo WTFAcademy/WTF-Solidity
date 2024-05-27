@@ -8,13 +8,13 @@ tags:
 
 # WTF Solidity 合约安全: S11. 抢先交易
 
-我最近在重新学 solidity，巩固一下细节，也写一个“WTF Solidity 极简入门”，供小白们使用（编程大佬可以另找教程），每周更新 1-3 讲。
+我最近在重新学 Solidity，巩固一下细节，也写一个“WTF Solidity 合约安全”，供小白们使用（编程大佬可以另找教程），每周更新 1-3 讲。
 
 推特：[@0xAA_Science](https://twitter.com/0xAA_Science)｜[@WTFAcademy_](https://twitter.com/WTFAcademy_)
 
-社区：[Discord](https://discord.wtf.academy)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
+社区：[Discord](https://discord.gg/5akcruXrsk)｜[微信群](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[官网 wtf.academy](https://wtf.academy)
 
-所有代码和教程开源在 github: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
+所有代码和教程开源在 github: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 ---
 
@@ -36,7 +36,7 @@ tags:
 
 在用户的交易被矿工打包进以太坊区块链之前，大部分交易会汇集到Mempool（交易内存池）中，矿工在这里寻找费用高的交易优先打包出块，实现利益最大化。通常来说，gas price越高的交易，越容易被打包。同时，一些`MEV`机器人也会搜索`mempool`中有利可图的交易。比如，一笔在去中心化交易所中滑点设置过高的`swap`交易可能会被三明治攻击：通过调整gas，套利者会在这笔交易之前插一个买单，再在之后发送一个卖单，并从中盈利。这等效于哄抬市价。
 
-![](./img/S10-1.png)
+![](./img/S11-1.png)
 
 ## 抢跑实践
 
@@ -59,7 +59,7 @@ tags:
 ```solidity
 // SPDX-License-Identifier: MIT
 // By 0xAA
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 // 我们尝试frontrun一笔Free mint交易
@@ -166,6 +166,7 @@ main()
 
 - 使用预提交方案(commit-reveal scheme)。
 - 使用暗池，用户发出的交易将不进入公开的`mempool`，而是直接到矿工手里。例如 flashbots 和 TaiChi。
+- 在调用参数中加上保护性参数，如[滑点保护](https://uniswapv3book.com/milestone_3/slippage-protection.html)，从而减少抢跑者的潜在收益。
 
 ## 总结
 

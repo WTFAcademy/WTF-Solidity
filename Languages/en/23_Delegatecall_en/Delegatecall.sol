@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.21;
 
 // delegatecall is similar to call, is a low level function
 // call: B call C, the execution context is C (msg.sender = B, the state variables of C are affected)
@@ -22,7 +22,7 @@ contract B {
     uint public num;
     address public sender;
 
-    // call setVars() of C with call, the state variabes of contract C will be changed
+    // call setVars() of C with call, the state variables of contract C will be changed
     function callSetVars(address _addr, uint _num) external payable{
         // call setVars()
         (bool success, bytes memory data) = _addr.call(

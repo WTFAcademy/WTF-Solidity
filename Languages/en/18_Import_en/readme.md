@@ -13,13 +13,13 @@ Recently, I have been revisiting Solidity, consolidating the finer details, and 
 
 Twitter: [@0xAA_Science](https://twitter.com/0xAA_Science) | [@WTFAcademy_](https://twitter.com/WTFAcademy_)
 
-Community: [Discord](https://discord.wtf.academy)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
+Community: [Discord](https://discord.gg/5akcruXrsk)｜[Wechat](https://docs.google.com/forms/d/e/1FAIpQLSe4KGT8Sh6sJ7hedQRuIYirOoZK_85miz3dw7vA1-YjodgJ-A/viewform?usp=sf_link)｜[Website wtf.academy](https://wtf.academy)
 
 Codes and tutorials are open source on GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
 
 -----
 
-`solidity` supports the use of `import` keyword to import global symbols in other contracts 
+`solidity` supports the use of the `import` keyword to import global symbols in other contracts 
 (simply understood as external source code), making development more modular. Generally, 
 if not specified, all global symbols of the imported file will be imported into the current global scope.
 
@@ -42,7 +42,7 @@ import './Yeye.sol';
 import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol';
 ```
 
-- Import via `npm` directory. For example:
+- Import via the `npm` directory. For example:
 ```solidity
 import '@openzeppelin/contracts/access/Ownable.sol';
 ```
