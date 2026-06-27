@@ -16,9 +16,11 @@ jobs:
     if: ${{ github.event.repository.fork }}
 
     steps:
-      # Step 1: run a standard checkout action
+      # Step 1: run a standard checkout action, always checkout the latest main
       - name: Checkout target repo
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       # Step 2: run the sync action
       - name: Sync upstream changes
