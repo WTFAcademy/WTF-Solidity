@@ -105,12 +105,12 @@ Ahora se declara la función `callSetX` para llamar a la función objetivo `setX
 
 ```solidity
 function callSetX(address payable _addr, uint256 x) public payable {
-    // Lamar a setX(), y enviar ETH
+    // Llamar a setX(), y enviar ETH
 	(bool success, bytes memory data) = _addr.call{value: msg.value}(
 		abi.encodeWithSignature("setX(uint256)", x)
 	);
 
-	emit Response(success, data); //emiter evento
+	emit Response(success, data); //emitir evento
 }
 ```
 
@@ -125,12 +125,12 @@ A continuación, se llama a la función `getX()`, y devolverá el valor de `_x` 
 
 ```solidity
 function callGetX(address _addr) external returns(uint256){
-    // Lammar getX()
+    // Llamar getX()
 	(bool success, bytes memory data) = _addr.call(
 		abi.encodeWithSignature("getX()")
 	);
 
-	emit Response(success, data); //emiter evento
+	emit Response(success, data); //emitir evento
 	return abi.decode(data, (uint256));
 }
 ```
@@ -150,7 +150,7 @@ function callNonExist(address _addr) external{
 		abi.encodeWithSignature("foo(uint256)")
 	);
 
-	emit Response(success, data); //emiter Evento
+	emit Response(success, data); //emitir evento
 }
 ```
 
