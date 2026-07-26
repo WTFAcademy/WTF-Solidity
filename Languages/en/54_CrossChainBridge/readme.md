@@ -4,7 +4,7 @@ tags:
    - solidity
    - erc20
    - eip712
-   - openzepplin
+   - openzeppelin
 ---
 
 # WTF Minimalist introduction to Solidity: 54. Cross-chain bridge

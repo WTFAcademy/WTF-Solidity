@@ -173,7 +173,7 @@ contract EIP712Storage {
 
 1. Implante o contrato `EIP712Storage`.
 
-2. Execute o arquivo `eip712storage.html`, alterando o `Endereço do Contrato` para o endereço do contrato `EIP712Storage` implantado. Em seguida, clique em `Conectar Metamask` e em `Assinar Permitir`. A assinatura deve ser feita usando a carteira do contrato implantada, como a carteira de teste do Remix:
+2. Execute o arquivo `eip712storage.html`, alterando o `Endereço do Contrato` para o endereço do contrato `EIP712Storage` implantado. Em seguida, clique em `Conectar MetaMask` e em `Assinar Permitir`. A assinatura deve ser feita usando a carteira do contrato implantada, como a carteira de teste do Remix:
 
     ```js
     Chave Pública: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
@@ -186,5 +186,5 @@ contract EIP712Storage {
 
 ## Conclusão
 
-Espero que você tenha compreendido bem esse método de assinatura mais avançado e seguro que é o EIP712. Ele é amplamente utilizado em diversos projetos, como Metamask, pares de tokens no Uniswap, DAI e muitos outros. Eu espero que você consiga dominar essa técnica com sucesso.
+Espero que você tenha compreendido bem esse método de assinatura mais avançado e seguro que é o EIP712. Ele é amplamente utilizado em diversos projetos, como MetaMask, pares de tokens no Uniswap, DAI e muitos outros. Eu espero que você consiga dominar essa técnica com sucesso.
 

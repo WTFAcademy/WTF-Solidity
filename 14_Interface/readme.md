@@ -132,4 +132,4 @@ contract interactBAYC {
 
 ## 总结
 
-这一讲，我介绍了`Solidity`中的抽象合约（`abstract`）和接口（`interface`），他们都可以写模版并且减少代码冗余。我们还讲了`ERC721`接口合约`IERC721`，以及如何利用它与无聊猿`BAYC`合约进行交互。
+这一讲，我介绍了`Solidity`中的抽象合约（`abstract`）和接口（`interface`），他们都可以写模板并且减少代码冗余。我们还讲了`ERC721`接口合约`IERC721`，以及如何利用它与无聊猿`BAYC`合约进行交互。

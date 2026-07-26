@@ -29,7 +29,7 @@ UUPS（universal upgradeable proxy standard，通用可升级代理）将升级�
 
 下表中概括了普通可升级合约，透明代理，和UUPS的不同点：
 
-![各类个升级合约](./img/49-1.png)
+![各类升级合约](./img/49-1.png)
 
 ## UUPS合约
 

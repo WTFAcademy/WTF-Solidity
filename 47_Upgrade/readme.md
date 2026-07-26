@@ -122,7 +122,7 @@ contract Logic2 {
 ![47-2.png](./img/47-2.png)
 ![47-3.png](./img/47-3.png)
 
-2. 部署可升级合约`SimpleUpgrade`，将`implementation`地址指向把旧逻辑合约。
+2. 部署可升级合约`SimpleUpgrade`，将`implementation`地址指向旧逻辑合约。
 ![47-4.png](./img/47-4.png)
 
 3. 利用选择器`0xc2985578`，在代理合约中调用旧逻辑合约`Logic1`的`foo()`函数，将`words`的值改为`"old"`。

@@ -39,7 +39,7 @@ O bytecode é:
 60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058209747525da0f525f1132dde30c8276ec70c4786d4b08a798eda3c8314bf796cc30029
 ```
 
-Para criar este contrato, precisamos fazer uma chamada RPC [eth_sendtransaction](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) para um nó Ethereum. Você pode usar o Remix ou o Metamask para fazer isso.
+Para criar este contrato, precisamos fazer uma chamada RPC [eth_sendTransaction](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendTransaction) para um nó Ethereum. Você pode usar o Remix ou o MetaMask para fazer isso.
 
 Independentemente da ferramenta de implantação que você usar, os parâmetros da chamada RPC serão semelhantes a isto:
 
@@ -389,7 +389,7 @@ FooFactoryAUXData
 
 O `FooFactoryContractCode`​ basicamente copia o bytecode de `tag_8`​ de `Foo`​ e, em seguida, salta de volta para `tag_7`​ para executar a instrução `create`​.
 
-A instrução `create`​ é semelhante a uma chamada RPC `eth_sendtransaction`. Ela fornece uma maneira de criar um novo contrato dentro da EVM.
+A instrução `create`​ é semelhante a uma chamada RPC `eth_sendTransaction`. Ela fornece uma maneira de criar um novo contrato dentro da EVM.
 
 Para o código-fonte do go-ethereum, consulte [opCreate](https://sourcegraph.com/github.com/ethereum/go-ethereum@e9295163aa25479e817efee4aac23eaeb7554bba/-/blob/core/vm/instructions.go#L572:6). A instrução chama `evm.Create`​ para criar um contrato:
 
@@ -437,7 +437,7 @@ Inicialmente, fiquei confuso com as diferentes partes do "instalador de contrato
 }
 ```
 
-Lendo a documentação de `eth_sendtransaction`, não estava claro como o `data`​ deveria ser codificado. Eu não conseguia entender como os argumentos do construtor eram passados para a transação até que um amigo me disse que eles eram codificados em ABI e anexados ao final do bytecode.
+Lendo a documentação de `eth_sendTransaction`, não estava claro como o `data`​ deveria ser codificado. Eu não conseguia entender como os argumentos do construtor eram passados para a transação até que um amigo me disse que eles eram codificados em ABI e anexados ao final do bytecode.
 
 Outra abordagem de design mais clara poderia ser enviar essas partes como propriedades separadas na transação:
 

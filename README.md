@@ -186,7 +186,7 @@
 
 **OP03：堆栈指令**：[代码](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/03_StackOp) | [文章](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/03_StackOp/readme.md)
 
-**OP04：算数指令**：[代码](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/04_ArithmeticOp) | [文章](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/04_ArithmeticOp/readme.md)
+**OP04：算术指令**：[代码](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/04_ArithmeticOp) | [文章](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/04_ArithmeticOp/readme.md)
 
 **OP05：比较指令**：[代码](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/05_ComparisonOp) | [文章](https://github.com/WTFAcademy/WTF-Opcodes/blob/main/05_ComparisonOp/readme.md)
 
@@ -270,7 +270,7 @@
 
 **第7讲：Foundry，以Solidity为中心的开发工具包** [代码](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Tools/TOOL07_Foundry) | [文章](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Tools/TOOL07_Foundry/readme.md)
 
-**第8讲：ZAN，节点服务和合约审计等Web3技术服务** [文章](https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Tools/TOOL08_ZAN/readme.md)
+**第8讲：ZAN，节点服务和合约审计等Web3技术服务** [文章](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Tools/TOOL08_ZAN/readme.md)
 
 ### 链上威胁分析
 
@@ -302,7 +302,7 @@
 
 ### 翻译
 
-**第1讲：Metamask项目方给Solidity程序员的16个安全建议** [文章](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Translation/Consensys2020)
+**第1讲：MetaMask项目方给Solidity程序员的16个安全建议** [文章](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Translation/Consensys2020)
 
 **第2讲：深入EVM** [文章](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/Translation/DiveEVM2017)
 

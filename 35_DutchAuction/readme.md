@@ -24,7 +24,7 @@ tags:
 
 ## 荷兰拍卖
 
-荷兰拍卖（`Dutch Auction`）是一种特殊的拍卖形式。 亦称“减价拍卖”，它是指拍卖标的的竞价由高到低依次递减直到第一个竞买人应价（达到或超过底价）时击槌成交的一种拍卖。
+荷兰拍卖（`Dutch Auction`）是一种特殊的拍卖形式。 亦称“减价拍卖”，它是指拍卖标的竞价由高到低依次递减直到第一个竞买人应价（达到或超过底价）时击槌成交的一种拍卖。
 
 ![荷兰拍卖](./img/35-1.png)
 
@@ -38,7 +38,7 @@ tags:
 
 ## `DutchAuction`合约
 
-代码基于`Azuki`的[代码](https://etherscan.io/address/0xed5af388653567af2f388e6224dc7c4b3241c544#code)简化而成。`DucthAuction`合约继承了之前介绍的`ERC721`和`Ownable`合约：
+代码基于`Azuki`的[代码](https://etherscan.io/address/0xed5af388653567af2f388e6224dc7c4b3241c544#code)简化而成。`DutchAuction`合约继承了之前介绍的`ERC721`和`Ownable`合约：
 
 ```solidity
 // SPDX-License-Identifier: MIT

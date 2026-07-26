@@ -131,7 +131,7 @@ contract Logic2 {
 ![48-2.png](./img/48-2.png)
 ![48-3.png](./img/48-3.png)
 
-2. 部署透明代理合约`TranparentProxy`，将`implementation`地址指向把旧逻辑合约。
+2. 部署透明代理合约`TransparentProxy`，将`implementation`地址指向旧逻辑合约。
 ![48-4.png](./img/48-4.png)
 
 3. 利用选择器`0xc2985578`，在代理合约中调用旧逻辑合约`Logic1`的`foo()`函数。调用将失败，因为管理员不能调用逻辑合约。

@@ -1,4 +1,4 @@
-## Metamask项目方给Solidity程序员的16个安全建议
+## MetaMask项目方给Solidity程序员的16个安全建议
 
 **原文**：[Solidity Best Practices for Smart Contract Security](https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security/)
 
@@ -11,7 +11,7 @@
 
 > 写在前面：
 >
-> 这是Metamask项目方（Consensys）在2020年8月写的一篇博客，关于智能合约安全，其中给了Solidity程序员16条安全建议，并包含代码样例。
+> 这是MetaMask项目方（Consensys）在2020年8月写的一篇博客，关于智能合约安全，其中给了Solidity程序员16条安全建议，并包含代码样例。
 >
 > 这篇文章写于一年半前，那时候solidity版本才到0.5,现在已经是0.8了，很多函数都不同。但很多建议至今仍然适用，读完对我帮助很大。我在网上没找到中文翻译，就简单翻译了一下，并标明了版本差异可能导致的问题，供中文开发者学习。
 >

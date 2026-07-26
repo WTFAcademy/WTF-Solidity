@@ -6,7 +6,7 @@ tags:
   - erc4626
   - defi
   - vault
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Simplified Introduction to Solidity: 51. ERC4626 Tokenization of Vault Standard

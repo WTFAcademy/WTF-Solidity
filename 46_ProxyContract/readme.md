@@ -88,7 +88,7 @@ fallback() external payable {
 
         // 利用delegatecall调用implementation合约
         // delegatecall操作码的参数：gas, 目标合约地址，input mem起始位置，input mem长度，output area mem起始位置，output area mem长度
-        // output area起始位置和长度位置，所以设为0
+        // 此处不读取返回值，output area 起始位置与长度均设为 0
         // delegatecall成功返回1，失败返回0
         let result := delegatecall(gas(), _implementation, 0, calldatasize(), 0, 0)
 
@@ -204,4 +204,4 @@ contract Caller{
 
 下一讲，我们会介绍可升级代理合约。
 
-代理合约虽然很强大，但是它非常容易出`bug`，用的时候最好直接复制[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/proxy)的模版合约。
+代理合约虽然很强大，但是它非常容易出`bug`，用的时候最好直接复制[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/proxy)的模板合约。

@@ -4,7 +4,7 @@ tags:
    - solidity
    - erc20
    - eip712
-   - openzepplin
+   - openzeppelin
 ---
 
 # WTF Solidity Minimalist Introduction: 52. EIP712 Typed Data Signature
@@ -185,7 +185,7 @@ contract EIP712Storage {
 
 1. Deploy the `EIP712Storage` contract.
 
-2. Run `eip712storage.html`, change the `Contract Address` to the deployed `EIP712Storage` contract address, and then click the `Connect Metamask` and `Sign Permit` buttons to sign. To sign, use the wallet that deploys the contract, such as the Remix test wallet:
+2. Run `eip712storage.html`, change the `Contract Address` to the deployed `EIP712Storage` contract address, and then click the `Connect MetaMask` and `Sign Permit` buttons to sign. To sign, use the wallet that deploys the contract, such as the Remix test wallet:
 
      ```js
      public_key: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
@@ -198,4 +198,4 @@ contract EIP712Storage {
 
 ## Summary
 
-In this lecture, we introduce EIP712 typed data signature, a more advanced and secure signature standard. When requesting a signature, the wallet displays the original data of the signed message and the user can sign after verifying the data. This standard is widely used and is used in Metamask, Uniswap token pairs, DAI stable currency and other scenarios. I hope everyone can master it.
+In this lecture, we introduce EIP712 typed data signature, a more advanced and secure signature standard. When requesting a signature, the wallet displays the original data of the signed message and the user can sign after verifying the data. This standard is widely used and is used in MetaMask, Uniswap token pairs, DAI stable currency and other scenarios. I hope everyone can master it.

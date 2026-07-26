@@ -41,7 +41,7 @@ solc --bin --asm c.sol
 60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058209747525da0f525f1132dde30c8276ec70c4786d4b08a798eda3c8314bf796cc30029
 ```
 
-要创建此合约，我们需要通过对以太坊节点进行 [eth_sendtransaction](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) RPC 调用来创建交易。您可以使用 Remix 或 Metamask 来执行此操作。
+要创建此合约，我们需要通过对以太坊节点进行 [eth_sendTransaction](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendTransaction) RPC 调用来创建交易。您可以使用 Remix 或 MetaMask 来执行此操作。
 
 无论您使用什么部署工具，RPC 调用的参数都类似于：
 
@@ -322,7 +322,7 @@ func opCodeCopy(pc *uint64, evm *EVM, contract *Contract, memory *Memory, stack 
 
 除了返回合约代码外，部署代码的另一个目的是运行构造函数进行设置。如果有构造函数参数，部署代码需要以某种方式从某个地方加载参数数据。
 
-传递构造函数参数的 Solidity 约定是在调用 `eth_sendtransaction`​ 时在字节码末尾附加 ABI 编码的参数值。 RPC 调用会将字节码和 ABI 编码参数一起作为输入数据传递，如下所示：
+传递构造函数参数的 Solidity 约定是在调用 `eth_sendTransaction`​ 时在字节码末尾附加 ABI 编码的参数值。 RPC 调用会将字节码和 ABI 编码参数一起作为输入数据传递，如下所示：
 
 ```json
 {
@@ -393,7 +393,7 @@ FooFactoryAUXData
 
 `FooFactoryContractCode`​ 基本上是复制 `tag_8`​ 中 `Foo`​ 的字节码，然后跳转回 `tag_7`​ 以执行 `create`​ 指令。
 
-`create`​ 指令类似于 `eth_sendtransaction`​ RPC 调用。它提供了一种在 EVM 内创建新合约的方法。
+`create`​ 指令类似于 `eth_sendTransaction`​ RPC 调用。它提供了一种在 EVM 内创建新合约的方法。
 
 有关 go-ethereum 源代码，请参见 [opCreate](https://sourcegraph.com/github.com/ethereum/go-ethereum@e9295163aa25479e817efee4aac23eaeb7554bba/-/blob/core/vm/instructions.go#L572:6)。该指令调用 `evm.Create`​ 来创建一个合约：
 
@@ -441,7 +441,7 @@ a1 65
 }
 ```
 
-从阅读 `eth_sendtransaction`​ 的文档来看，`data`​ 应该如何编码并不明显。我无法弄清楚构造函数参数是如何传递到交易中的，直到一个朋友告诉我它们是 ABI 编码然后附加到字节码的末尾。
+从阅读 `eth_sendTransaction`​ 的文档来看，`data`​ 应该如何编码并不明显。我无法弄清楚构造函数参数是如何传递到交易中的，直到一个朋友告诉我它们是 ABI 编码然后附加到字节码的末尾。
 
 另一种更清晰的设计可能是将这些部分作为交易中的单独属性发送：
 

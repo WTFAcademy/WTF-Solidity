@@ -216,7 +216,7 @@ function executeNew(uint a) external returns (bool success) {
 
 ## 总结
 
-在这一讲，我们介绍了如何在`Solidity`使用`try-catch`来处理智能合约运行中的异常：
+在这一讲，我们介绍了如何在`Solidity`中使用`try-catch`来处理智能合约运行中的异常：
 
 - 只能用于外部合约调用和合约创建。
 - 如果`try`执行成功，返回变量必须声明，并且与返回的变量类型相同。

@@ -52,7 +52,7 @@ contract VulnerableBank {
   }
 
   function deposit() external payable {
-    require(msg.value > 0, "Deposit amount must ba greater than 0");
+    require(msg.value > 0, "Deposit amount must be greater than 0");
     balances[msg.sender] += msg.value;
   }
 
@@ -100,12 +100,12 @@ contract Attack2Contract {
     }
 
     function withdraw() external {
-        Ivault(victim).withdraw();
+        IVault(victim).withdraw();
     }
 
     receive() external payable {
-        uint256 balance = Ivault(victim).balances[address(this)];
-        Ivault(victim).transfer(owner, balance);
+        uint256 balance = IVault(victim).balances[address(this)];
+        IVault(victim).transfer(owner, balance);
     }
 }
 ```
@@ -152,7 +152,7 @@ contract TwoStepSwapManager {
 
     function createSwap(uint256 _amount, address[] _swapPath, bool _unwrapnativeToken) external nonReentrant {
         IERC20(swapPath[0]).safeTransferFrom(msg.sender, _amount);
-        pendingSwaps[++swapNounce] = Swap({
+        pendingSwaps[++swapNonce] = Swap({
             user: msg.sender,
             amount: _amount,
             swapPath: _swapPath,
@@ -174,7 +174,7 @@ contract TwoStepSwapManager {
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-// Contract to exeute swaps
+// Contract to execute swaps
 
 contract TwoStepSwapExecutor {
 
@@ -285,7 +285,7 @@ contract VulnerableBank {
   }
 
   function deposit() external payable {
-    require(msg.value > 0, "Deposit amount must ba greater than 0");
+    require(msg.value > 0, "Deposit amount must be greater than 0");
     balances[msg.sender] += msg.value;
   }
 
@@ -305,7 +305,7 @@ contract VulnerableBank {
 }
 ```
 
-如代码所示，在这个合约中，已经没有攻击者发挥重入的空间了。然而，这里没有，不代表别处没有。。。 我们可以看到合约里有一个公开的只读函数`isAllowedToWithdraw`，这类函数就是用来以提供信息为目的的。很多项目的合约里都或多或少有一些这类函数，而这类函数又常被其他项目的合约来调用获取信息，最终完成Defi世界里的一个乐高积木。可以看到这个重要的`withdraw`函数已经被上了锁，不可以重入攻击，但是在他的执行过程中的`ETH`转账那一步，`ETH`刚刚转出，假设攻击者想要此刻调用`isAllowedToWithdraw`函数，可以预见即便是`_amount`数值很大，攻击者的存款实际已被掏空，但返回值仍然是`true`因为账本在此刻还没有更新。那么，攻击者就可以在他的恶意合约里的`fallback`函数中设置外部函数调用,去攻击他已知的其他项目的依据`isAllowedToWithdraw`函数返回结果来制定操作的那些合约。
+如代码所示，在这个合约中，已经没有攻击者发挥重入的空间了。然而，这里没有，不代表别处没有。。。 我们可以看到合约里有一个公开的只读函数`isAllowedToWithdraw`，这类函数就是用来以提供信息为目的。很多项目的合约里都或多或少有一些这类函数，而这类函数又常被其他项目的合约来调用获取信息，最终完成Defi世界里的一个乐高积木。可以看到这个重要的`withdraw`函数已经被上了锁，不可以重入攻击，但是在他的执行过程中的`ETH`转账那一步，`ETH`刚刚转出，假设攻击者想要此刻调用`isAllowedToWithdraw`函数，可以预见即便是`_amount`数值很大，攻击者的存款实际已被掏空，但返回值仍然是`true`因为账本在此刻还没有更新。那么，攻击者就可以在他的恶意合约里的`fallback`函数中设置外部函数调用,去攻击他已知的其他项目的依据`isAllowedToWithdraw`函数返回结果来制定操作的那些合约。
 
 上面这个合约本身不遭攻击，而合作伙伴的合约遭到攻击。。。典型的：
 

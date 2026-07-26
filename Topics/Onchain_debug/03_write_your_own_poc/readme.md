@@ -21,8 +21,8 @@ DeFiHackLabs 期望更多人可以关注 Web3 安全，当攻击事件发生时�
 
 ## 在学习撰写 Reproduce PoC 之前，会需要具备的知识
 
-1. 暸解常见智能合约漏洞样态，可以参考 [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs) 进行练习。
-2. 暸解 DeFi 基础建设如何运作，以及智能合约与智能合约之间如何互动。
+1. 了解常见智能合约漏洞样态，可以参考 [DeFiVulnLabs](https://github.com/SunWeb3Sec/DeFiVulnLabs) 进行练习。
+2. 了解 DeFi 基础建设如何运作，以及智能合约与智能合约之间如何互动。
 
 ## 价格预言机原理简介
 
@@ -66,9 +66,9 @@ uint256 ETH_Price = UniV2_USDC_Reserve / UniV2_ETH_Reserve;
 
 > 请注意，这种写法容易被操纵预言机价格，请不要在生产环境这么做。
 
-如果需要详细暸解 Uniswap V2 算法原理，推荐参考 [Smart Contract Programmer 教学影片](https://www.youtube.com/watch?v=Ar4Ik7Bov0U)。
+如果需要详细了解 Uniswap V2 算法原理，推荐参考 [Smart Contract Programmer 教学影片](https://www.youtube.com/watch?v=Ar4Ik7Bov0U)。
 
-如果需要详细暸解价格预言机操纵原理，推荐参考 [WTFSolidity 教学文章](https://github.com/WTFAcademy/WTF-Solidity/blob/main/S15_OracleManipulation/readme.md)。
+如果需要详细了解价格预言机操纵原理，推荐参考 [WTFSolidity 教学文章](https://github.com/WTFAcademy/WTF-Solidity/blob/main/S15_OracleManipulation/readme.md)。
 
 
 ## 现实中的价格操纵案例
@@ -79,7 +79,7 @@ uint256 ETH_Price = UniV2_USDC_Reserve / UniV2_ETH_Reserve;
     - 根本原因: 特权操作缺乏身份验证机制
     - 案例: [Rikkei Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220415-rikkei-finance---access-control--price-oracle-manipulation)
 2. 攻击者透过闪电贷，瞬间抽走预言机的流动性，使受害合约取得异常的价格资讯
-    - 此漏洞常在 GetPrice、Swap、StackingReward、Transfer(with burn fee) 等关键功能被利用
+    - 此漏洞常在 GetPrice、Swap、StakingReward、Transfer(with burn fee) 等关键功能被利用
     - 根本原因: 项目方使用了不安全的预言机，或是未实现 TWAP 时间加权平均价格。
     - 案例: [One Ring Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220321-onering-finance---flashloan--price-oracle-manipulation)
 
@@ -136,7 +136,7 @@ uint256 ETH_Price = UniV2_USDC_Reserve / UniV2_ETH_Reserve;
 
 1. 确认可从 DEX 借走的余额，以及确认受害者合约有足够的余额使攻击者获利
     - 这意味著在 Tx 前半部会有一些 Static Call
-2. 呼叫借贷函数，从 DEX 或 Landing Protocol 收到闪电贷款
+2. 呼叫借贷函数，从 DEX 或 Lending Protocol 收到闪电贷款
     - 重点: 寻找以下 Function Call
     - UniswapV2, Pancakeswap: `.swap()`
     - Balancer: `flashLoan()`

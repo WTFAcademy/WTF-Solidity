@@ -106,7 +106,7 @@ struct Student{
     uint256 score; 
 }
 
-Student student; // 初始一个student结构体
+Student student; // 初始化一个 student 结构体
 ```
 
 给结构体赋值的四种方法：

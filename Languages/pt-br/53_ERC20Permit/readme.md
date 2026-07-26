@@ -171,7 +171,7 @@ contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
 
 1. Implante o contrato `ERC20Permit` com os valores `name` e `symbol` definidos como `WTFPermit`.
 
-2. Execute o arquivo `signERC20Permit.html`, altere o `Contract Address` para o endereço do contrato `ERC20Permit` implantado e forneça as outras informações conforme indicado. Em seguida, clique em `Connect Metamask` e depois em `Sign Permit` para assinar e obter os valores `r`, `s` e `v` para a verificação no contrato. A assinatura deve ser realizada com a carteira conectada no ambiente de desenvolvimento, como a carteira no Remix.
+2. Execute o arquivo `signERC20Permit.html`, altere o `Contract Address` para o endereço do contrato `ERC20Permit` implantado e forneça as outras informações conforme indicado. Em seguida, clique em `Connect MetaMask` e depois em `Sign Permit` para assinar e obter os valores `r`, `s` e `v` para a verificação no contrato. A assinatura deve ser realizada com a carteira conectada no ambiente de desenvolvimento, como a carteira no Remix.
 
     ```js
     owner: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4    spender: 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
