@@ -52,7 +52,7 @@ However, this method is the most convenient on-chain random number generation me
 We can generate random numbers off-chain and upload them to the chain through oracles. Chainlink provides a VRF (Verifiable Random Function) service, and on-chain developers can pay the LINK token to obtain a random number. Chainlink VRF has two versions. Since the second version requires registration on the official website and prepaid fees, and the usage is similar, only the first version VRF v1 is introduced here.
 
 ### Steps to use `Chainlink VRF`
-![Chainlnk VRF](./img/39-1.png)
+![Chainlink VRF](./img/39-1.png)
 
 We will use a simple contract to introduce the steps to use Chainlink VRF. The `RandomNumberConsumer` contract can request a random number from the VRF and store it in the state variable `randomResult`.
 
@@ -299,7 +299,7 @@ After the contract is deployed, copy the contract address, and transfer `LINK` t
 
 ### 4. Mint NFTs using on-chain random numbers
 
-In the `remix` interface, click on the orange function `mintRandomOnchain` on the left side![mintOnchain](./img/39-5-1.png), then click confirm in the pop-up `Metamask` to start minting the transaction using on-chain random numbers.
+In the `remix` interface, click on the orange function `mintRandomOnchain` on the left side![mintOnchain](./img/39-5-1.png), then click confirm in the pop-up `MetaMask` to start minting the transaction using on-chain random numbers.
 
 ![Mint NFTs using onchain random numbers](./img/39-5.png)
 

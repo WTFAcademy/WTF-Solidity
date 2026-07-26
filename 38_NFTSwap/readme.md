@@ -85,7 +85,7 @@ contract NFTSwap is IERC721Receiver {
 
 合约实现了`4`个交易相关的函数：
 
-- 挂单`list()`：卖家创建`NFT`并创建订单，并释放`List`事件。参数为`NFT`合约地址`_nftAddr`，`NFT`对应的`_tokenId`，挂单价格`_price`（**注意：单位是`wei`**）。成功后，`NFT`会从卖家转到`NFTSwap`合约中。
+- 挂单`list()`：卖家上架`NFT`并创建订单，并释放`List`事件。参数为`NFT`合约地址`_nftAddr`，`NFT`对应的`_tokenId`，挂单价格`_price`（**注意：单位是`wei`**）。成功后，`NFT`会从卖家转到`NFTSwap`合约中。
 
     ```solidity
     // 挂单: 卖家上架NFT，合约地址为_nftAddr，tokenId为_tokenId，价格_price为以太坊（单位是wei）
@@ -182,13 +182,13 @@ contract NFTSwap is IERC721Receiver {
 
 ![部署NFT合约](./img/38-1.png)
 
-将首个NFT mint给自己，这里mint给自己是为了之后能够上架NFT、修改价格等一系类操作。
+将首个NFT mint给自己，这里mint给自己是为了之后能够上架NFT、修改价格等一系列操作。
 
 `mint(address to, uint tokenId)`方法有2个参数:
 
 `to`:将 NFT mint给指定的地址，这里通常是自己的钱包地址。
 
-`tokenId`: `WTFApe`合约定义了总量为10000个NFT，图中mint它的的第一个和第二个NFT，`tokenId`分别为`0`和`1`。
+`tokenId`: `WTFApe`合约定义了总量为10000个NFT，图中mint它的第一个和第二个NFT，`tokenId`分别为`0`和`1`。
 
 ![mint NFT](./img/38-2.png)
 

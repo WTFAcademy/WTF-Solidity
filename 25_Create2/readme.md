@@ -113,7 +113,7 @@ contract PairFactory2{
 }
 ```
 
-工厂合约（`PairFactory2`）有两个状态变量`getPair`是两个代币地址到币对地址的`map`，方便根据代币找到币对地址；`allPairs`是币对地址的数组，存储了所有币对地址。
+工厂合约（`PairFactory2`）有两个状态变量：`getPair`是两个代币地址到币对地址的`map`，方便根据代币找到币对地址；`allPairs`是币对地址的数组，存储了所有币对地址。
 
 `PairFactory2`合约只有一个`createPair2`函数，使用`CREATE2`根据输入的两个代币地址`tokenA`和`tokenB`来创建新的`Pair`合约。其中
 
@@ -121,7 +121,7 @@ contract PairFactory2{
 Pair pair = new Pair{salt: salt}(); 
 ```
 
-就是利用`CREATE2`创建合约的代码，非常简单，而`salt`为`token1`和`token2`的`hash`：
+就是利用`CREATE2`创建合约的代码，非常简单，而`salt`为`token0`和`token1`的`hash`：
 
 ```solidity
 bytes32 salt = keccak256(abi.encodePacked(token0, token1));
@@ -133,7 +133,7 @@ bytes32 salt = keccak256(abi.encodePacked(token0, token1));
 // 提前计算pair合约地址
 function calculateAddr(address tokenA, address tokenB) public view returns(address predictedAddress){
     require(tokenA != tokenB, 'IDENTICAL_ADDRESSES'); //避免tokenA和tokenB相同产生的冲突
-    // 计算用tokenA和tokenB地址计算salt
+    // 用 tokenA 和 tokenB 地址计算 salt
     (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA); //将tokenA和tokenB按大小排序
     bytes32 salt = keccak256(abi.encodePacked(token0, token1));
     // 计算合约地址方法 hash()

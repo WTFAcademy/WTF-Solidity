@@ -52,7 +52,7 @@ Agora, vamos implantar o contrato compilado em uma máquina virtual local ou na 
 
 ![Implantação](./img/remix6.png)
 
-Na seção "ENVIRONMENT", você pode selecionar o ambiente de implantação. O padrão é "JavaScript VM", onde todas as transações são executadas em uma blockchain local no navegador, usando o endereço da carteira virtual fornecido pelo Remix. Você também pode selecionar "Injected Web3" para conectar sua carteira Metamask e executar as transações na blockchain real.
+Na seção "ENVIRONMENT", você pode selecionar o ambiente de implantação. O padrão é "JavaScript VM", onde todas as transações são executadas em uma blockchain local no navegador, usando o endereço da carteira virtual fornecido pelo Remix. Você também pode selecionar "Injected Web3" para conectar sua carteira MetaMask e executar as transações na blockchain real.
 
 Aqui, vamos selecionar "JavaScript VM" e você poderá ver o endereço de teste atribuído pela máquina virtual na seção "ACCOUNT". Não é necessário ajustar o "Gas" nem enviar "ETH" para o contrato. Na seção "CONTRACT", selecione o contrato "Storage" que você deseja implantar. Como o arquivo "1_Storage.sol" contém apenas um contrato, ele será selecionado automaticamente. No entanto, se o arquivo contiver vários contratos, você precisará selecionar manualmente o contrato que deseja implantar.
 

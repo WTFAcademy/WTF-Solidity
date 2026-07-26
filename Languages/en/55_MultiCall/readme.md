@@ -111,7 +111,7 @@ contract Multicall {
     calldata: 0x40c10f190000000000000000000000005b38da6a701c568545dcfcb03fcb875f56beddc40000000000000000000000000000000000000000000000000000000000000032
     ```
 
-    .[](./img/55-1.png)
+    ![](./img/55-1.png)
 
 If you don’t understand `calldata`, you can read WTF Solidity [Lecture 29].
 
@@ -127,7 +127,7 @@ If you don’t understand `calldata`, you can read WTF Solidity [Lecture 29].
     ```
 
    The return value of the call can be viewed in `decoded output`. The balances of the two addresses are `0x0000000000000000000000000000000000000000000000000000000000000000032` and `0x00000000000000000000000000000 00000000000000000000000000000000000064`, that is, 50 and 100, the call was successful!
-     .[](./img/55-2.png)
+     ![](./img/55-2.png)
 
 ## Summary
 

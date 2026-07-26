@@ -10,7 +10,7 @@ Todo o código e tutoriais estão disponíveis no Github: [github.com/AmazingAng
 
 -----
 
-Nesta lição, vamos falar sobre a vulnerabilidade de overflow de inteiros (Arithmetic Over/Under Flows). Esta é uma vulnerabilidade clássica, mas a partir da versão 0.8 do Solidity, a biblioteca Safemath está integrada, o que reduz consideravelmente a ocorrência desse tipo de problema.
+Nesta lição, vamos falar sobre a vulnerabilidade de overflow de inteiros (Arithmetic Over/Under Flows). Esta é uma vulnerabilidade clássica, mas a partir da versão 0.8 do Solidity, a biblioteca SafeMath está integrada, o que reduz consideravelmente a ocorrência desse tipo de problema.
 
 ## Overflow de Inteiros
 
@@ -69,11 +69,11 @@ contract Token {
 
 ## Medidas de Prevenção
 
-1. Para versões anteriores à `0.8.0`, é recomendado a utilização da biblioteca [Safemath](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol) para proteger contra erros de overflow de inteiros.
+1. Para versões anteriores à `0.8.0`, é recomendado a utilização da biblioteca [SafeMath](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol) para proteger contra erros de overflow de inteiros.
 
-2. A partir da versão `0.8.0` do Solidity, o `Safemath` está integrado diretamente, praticamente eliminando esse tipo de problema. Os desenvolvedores podem, algumas vezes, desativar temporariamente a verificação de overflow de inteiros utilizando a palavra-chave `unchecked`, porém devem garantir que não existam vulnerabilidades de overflow no código.
+2. A partir da versão `0.8.0` do Solidity, o `SafeMath` está integrado diretamente, praticamente eliminando esse tipo de problema. Os desenvolvedores podem, algumas vezes, desativar temporariamente a verificação de overflow de inteiros utilizando a palavra-chave `unchecked`, porém devem garantir que não existam vulnerabilidades de overflow no código.
 
 ## Conclusão
 
-Nesta lição, apresentamos a clássica vulnerabilidade de overflow de inteiros. Com a integração do `Safemath` a partir da versão 0.8.0 do Solidity, esse tipo de vulnerabilidade se tornou muito raro.
+Nesta lição, apresentamos a clássica vulnerabilidade de overflow de inteiros. Com a integração do `SafeMath` a partir da versão 0.8.0 do Solidity, esse tipo de vulnerabilidade se tornou muito raro.
 

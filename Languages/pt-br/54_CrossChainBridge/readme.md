@@ -4,7 +4,7 @@ tags:
   - solidity
   - erc20
   - eip712
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Solidity Introdução Simples: 54. Ponte de Cadeia Cruzada

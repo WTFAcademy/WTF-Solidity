@@ -43,11 +43,11 @@
 
 ### `Segurança de Contrato`
 
-**Aula 1: 16 dicas de segurança para programadores Solidity da equipe Metamask**【[Código](./Topics/Translation/Consensys2020)】 【[Artigo](https://mirror.xyz/wtfacademy.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
+**Aula 1: 16 dicas de segurança para programadores Solidity da equipe MetaMask**【[Código](./Topics/Translation/Consensys2020)】 【[Artigo](https://mirror.xyz/wtfacademy.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
 
 ### `Tradução`
 
-**Aula 1: 16 dicas de segurança para programadores Solidity da equipe Metamask**【[Artigo](./Topics/Translation/Consensys2020)】 【[Mirror](https://mirror.xyz/wtfacademy.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
+**Aula 1: 16 dicas de segurança para programadores Solidity da equipe MetaMask**【[Artigo](./Topics/Translation/Consensys2020)】 【[Mirror](https://mirror.xyz/wtfacademy.eth/ygaDE0QQwn3lfI-AVaw0ZMqHQtWCdzo-XV450j2camc)】
 
 **Aula 2: Explorando a EVM**【[Artigo](./Topics/Translation/DiveEVM2017)】
 

@@ -19,7 +19,7 @@ English translations by: [@to_22X](https://twitter.com/to_22X)
 
 -----
 
-In this lesson, we will introduce the integer overflow vulnerability (Arithmetic Over/Under Flows). This is a relatively common vulnerability, but it has become less prevalent since Solidity version 0.8, which includes the Safemath library.
+In this lesson, we will introduce the integer overflow vulnerability (Arithmetic Over/Under Flows). This is a relatively common vulnerability, but it has become less prevalent since Solidity version 0.8, which includes the SafeMath library.
 
 ## Integer Overflow
 
@@ -77,10 +77,10 @@ contract Token {
 
 ## How to Prevent
 
-1. For versions of Solidity before `0.8.0`, include the [Safemath library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol) in the contract to throw an error in case of integer overflow.
+1. For versions of Solidity before `0.8.0`, include the [SafeMath library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol) in the contract to throw an error in case of integer overflow.
 
-2. For versions of Solidity after `0.8.0`, `Safemath` is built-in, so this type of issue is almost non-existent. However, developers may temporarily disable integer overflow checks within a code block using the `unchecked` keyword to save gas. In such cases, it is important to ensure that no integer overflow vulnerabilities exist.
+2. For versions of Solidity after `0.8.0`, `SafeMath` is built-in, so this type of issue is almost non-existent. However, developers may temporarily disable integer overflow checks within a code block using the `unchecked` keyword to save gas. In such cases, it is important to ensure that no integer overflow vulnerabilities exist.
 
 ## Summary
 
-In this lesson, we introduced the classic integer overflow vulnerability. Due to the built-in `Safemath` integer overflow check in Solidity version `0.8.0` and later, this type of vulnerability has become rare.
+In this lesson, we introduced the classic integer overflow vulnerability. Due to the built-in `SafeMath` integer overflow check in Solidity version `0.8.0` and later, this type of vulnerability has become rare.

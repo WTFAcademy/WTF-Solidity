@@ -4,7 +4,7 @@ tags:
   - solidity
   - erc20
   - eip712
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Solidity极简入门: 54. 跨链桥
@@ -174,7 +174,7 @@ main();
 
 ## Remix 复现
 
-1. 在Goerli和Sepolia测试链部署分别部署`CrossChainToken`合约，合约会自动给我们铸造 10000 枚代币
+1. 在Goerli和Sepolia测试链分别部署`CrossChainToken`合约，合约会自动给我们铸造 10000 枚代币
 
     ![](./img/54-4.png)
 
@@ -188,7 +188,7 @@ main();
 
     ![](./img/54-7.png)
 
-5. 在Sepolia链上调用`balance()`查询余额，发现代币余额变为10100枚，跨链成功！
+5. 在Sepolia链上调用`balanceOf()`查询余额，发现代币余额变为10100枚，跨链成功！
 
     ![](./img/54-8.png)
 

@@ -80,7 +80,7 @@ Most common attack modes:
     * Root cause: lack of verification mechanism
     * For example: [Rikkei Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220415-rikkei-finance---access-control--price-oracle-manipulation)
 2. Through flash loans, an attacker can drain liquidity, resulting in wrong pricing information in an oracle.
-    * This is most often seen in attackers calling these functions. GetPrice、Swap、StackingReward, Transfer(with burn fee), etc.
+    * This is most often seen in attackers calling these functions. GetPrice、Swap、StakingReward, Transfer(with burn fee), etc.
     * Root cause: Protocols using unsafe/compromised oracles, or the oracle did not implement time-weighted average price features.
     * Example: [One Ring Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220321-onering-finance---flashloan--price-oracle-manipulation)
 

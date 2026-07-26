@@ -132,7 +132,7 @@ function tokenURI(uint256 tokenId) public view virtual override returns (string 
 }
 ```
 
-这个函数把`baseURI`和指定的`tokenId`拼接到一起，返回`ERC721 metadata`的网址，你花几十个ETH买的的jpeg就是存在这个网址上的。
+这个函数把`baseURI`和指定的`tokenId`拼接到一起，返回`ERC721 metadata`的网址，你花几十个ETH买的jpeg就是存在这个网址上的。
 
 ## 总结
 

@@ -298,7 +298,7 @@ Além do construtor, o contrato define 5 outras funções.
 
 ### 4. Criar NFTs usando números aleatórios onchain
 
-Na interface do `remix`, clique na função laranja `mintRandomOnchain` no lado esquerdo ![mintOnchain](./img/39-5-1.png), em seguida, clique em confirmar na janela pop-up do `Metamask` para iniciar a transação de criação usando números aleatórios onchain.
+Na interface do `remix`, clique na função laranja `mintRandomOnchain` no lado esquerdo ![mintOnchain](./img/39-5-1.png), em seguida, clique em confirmar na janela pop-up do `MetaMask` para iniciar a transação de criação usando números aleatórios onchain.
 
 ![Criar NFTs usando números aleatórios onchain](./img/39-5.png)
 

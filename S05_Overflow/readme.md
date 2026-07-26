@@ -17,7 +17,7 @@ tags:
 
 ---
 
-这一讲，我们将介绍整型溢出漏洞（Arithmetic Over/Under Flows）。这是一个比较经典的漏洞，Solidity 0.8版本后内置了Safemath库，因此很少发生。
+这一讲，我们将介绍整型溢出漏洞（Arithmetic Over/Under Flows）。这是一个比较经典的漏洞，Solidity 0.8版本后内置了SafeMath库，因此很少发生。
 
 ## 整型溢出
 
@@ -75,10 +75,10 @@ contract Token {
 
 ## 预防办法
 
-1. Solidity `0.8.0` 之前的版本，在合约中引用 [Safemath 库](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.9/contracts/utils/math/SafeMath.sol)，在整型溢出时报错。
+1. Solidity `0.8.0` 之前的版本，在合约中引用 [SafeMath 库](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.9/contracts/utils/math/SafeMath.sol)，在整型溢出时报错。
 
-2. Solidity `0.8.0` 之后的版本内置了 `Safemath`，因此几乎不存在这类问题。开发者有时会为了节省gas使用 `unchecked` 关键字在代码块中临时关闭整型溢出检测，这时要确保不存在整型溢出漏洞。
+2. Solidity `0.8.0` 之后的版本内置了 `SafeMath`，因此几乎不存在这类问题。开发者有时会为了节省gas使用 `unchecked` 关键字在代码块中临时关闭整型溢出检测，这时要确保不存在整型溢出漏洞。
 
 ## 总结
 
-这一讲，我们介绍了经典的整型溢出漏洞，由于solidity 0.8.0 版本后内置 `Safemath` 的整型溢出检查，这类漏洞已经很少见了。
+这一讲，我们介绍了经典的整型溢出漏洞，由于solidity 0.8.0 版本后内置 `SafeMath` 的整型溢出检查，这类漏洞已经很少见了。

@@ -284,7 +284,7 @@ require("@nomicfoundation/hardhat-toolbox");
 const ALCHEMY_API_KEY = "KEY";
 
 //将此私钥替换为测试账号私钥
-//从Metamask导出您的私钥，打开Metamask和进入“帐户详细信息”>导出私钥
+//从MetaMask导出您的私钥，打开MetaMask和进入“帐户详细信息”>导出私钥
 //注意:永远不要把真正的以太放入测试帐户
 const GOERLI_PRIVATE_KEY = "YOUR GOERLI PRIVATE KEY";
 

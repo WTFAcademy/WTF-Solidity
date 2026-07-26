@@ -111,7 +111,7 @@ contract Multicall {
     calldata: 0x40c10f190000000000000000000000005b38da6a701c568545dcfcb03fcb875f56beddc40000000000000000000000000000000000000000000000000000000000000032
     ```
 
-    .[](./img/55-1.png)
+    ![](./img/55-1.png)
 
     Se você não está familiarizado com `calldata`, pode ler a lição 29 do WTF Solidity.
 

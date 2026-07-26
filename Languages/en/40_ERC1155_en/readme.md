@@ -705,7 +705,7 @@ In the `mint` section, enter the account address, `id`, and quantity, and click 
 
 ![mint1](./img/40-3.jpg)
 
-In the `blanceOf` section, enter the account address and `id` to view the corresponding position.
+In the `balanceOf` section, enter the account address and `id` to view the corresponding position.
 
 ![mint2](./img/40-4.jpg)
 

@@ -6,7 +6,7 @@ tags:
   - erc4626
   - defi
   - tesouraria
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Introdução Simples ao Solidity: 51. Padrão de Tesouraria Tokenizada ERC4626
