@@ -30,7 +30,7 @@ The earliest token faucet was the Bitcoin (BTC) faucet. In 2010, the price of BT
 
 ## ERC20 Faucet Contract
 
-Here, we will implement a simplified version of an `ERC20` faucet. The logic is very simple: we will transfer some `ERC20` tokens to the faucet contract, and users can use the `requestToken()` function of the contract to receive `100` units of the token. Each address can only receive tokens once.
+Here, we will implement a simplified version of an `ERC20` faucet. The logic is very simple: we will transfer some `ERC20` tokens to the faucet contract, and users can use the `requestTokens()` function of the contract to receive `100` units of the token. Each address can only receive tokens once.
 
 ### State Variables
 
