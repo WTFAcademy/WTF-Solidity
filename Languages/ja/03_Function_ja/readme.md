@@ -15,7 +15,7 @@
 Solidityにおける関数の書式を示します:
 
 ```solidity
-    function <function name>(<parameter types>) [internal|external] [pure|view|payable] [returns (<return types>)]
+    function <function name>(<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
 ```
 
 複雑に見えるかもしれませんが、１つ１つ分解して見てみましょう（角括弧はオプションのキーワードを示します）:
@@ -37,7 +37,7 @@ Solidityにおける関数の書式を示します:
 
    - `internal`: コントラクト内部およびそのコントラクトから派生するコントラクトからのみアクセス出来る。
 
-    **Note 1**: `public`はデフォルトで関数のビジビリティとなっています。
+    **Note 1**: 関数にはデフォルトのビジビリティはありません。`public`、`private`、`internal`、`external` のいずれかを明示的に指定する必要があります。
     
     **Note 2**: `public|private|internal`は状態変数でも使用されます。パブリックな変数は値を照会する為の`getter`関数を自動的に生成します。
     
