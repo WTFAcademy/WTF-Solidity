@@ -30,7 +30,7 @@ Anteriormente en [20: Enviar ETH](https://github.com/AmazingAng/WTF-Solidity/tre
 `call` es una de las funciones de bajo nivel de `address` que se utiliza para interactuar con otros contratos. Devuelve la condición de éxito y los datos devueltos: `(bool, data)`.
 
 - Oficialmente recomendado por `solidity`, `call` se utiliza para enviar `ETH` al activar funciones `fallback` o `receive`.
-- `call` no es recomendado para interactuar con otros contratos, porque cede el control al llamar a un contrato malicioso. La forma recomendada es crear una referencia de contrato y llamar a sus funciones. Ver [21: Interactuar con otro Contrato](https://github.com/AmazingAng/WTF-Solidity/tree/main/Languages/en/21_LamarContrato_es)
+- `call` no es recomendado para interactuar con otros contratos, porque cede el control al llamar a un contrato malicioso. La forma recomendada es crear una referencia de contrato y llamar a sus funciones. Ver [21: Interactuar con otro Contrato](https://github.com/AmazingAng/WTF-Solidity/tree/main/Languages/es/21_LlamarContrato_es)
 - Si el código fuente o `ABI` no está disponible, no podemos crear una variable de contrato; sin embargo, aún podemos interactuar con otros contratos utilizando la función `call`.
 
 ### Reglas de uso de `call`
