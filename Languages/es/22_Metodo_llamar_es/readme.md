@@ -20,7 +20,7 @@ La traducción al español ha sido realizada por Jonathan Díaz con el objetivo 
 
 Twitter: [@jonthdiaz](https://twitter.com/jonthdiaz)
 
-Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
 
 -----
 
@@ -30,7 +30,7 @@ Anteriormente en [20: Enviar ETH](https://github.com/AmazingAng/WTF-Solidity/tre
 `call` es una de las funciones de bajo nivel de `address` que se utiliza para interactuar con otros contratos. Devuelve la condición de éxito y los datos devueltos: `(bool, data)`.
 
 - Oficialmente recomendado por `solidity`, `call` se utiliza para enviar `ETH` al activar funciones `fallback` o `receive`.
-- `call` no es recomendado para interactuar con otros contratos, porque cede el control al llamar a un contrato malicioso. La forma recomendada es crear una referencia de contrato y llamar a sus funciones. Ver [21: Interactuar con otro Contrato](https://github.com/AmazingAng/WTF-Solidity/tree/main/Languages/en/21_LamarContrato_es)
+- `call` no es recomendado para interactuar con otros contratos, porque cede el control al llamar a un contrato malicioso. La forma recomendada es crear una referencia de contrato y llamar a sus funciones. Ver [21: Interactuar con otro Contrato](https://github.com/AmazingAng/WTF-Solidity/tree/main/Languages/es/21_LlamarContrato_es)
 - Si el código fuente o `ABI` no está disponible, no podemos crear una variable de contrato; sin embargo, aún podemos interactuar con otros contratos utilizando la función `call`.
 
 ### Reglas de uso de `call`
@@ -105,12 +105,12 @@ Ahora se declara la función `callSetX` para llamar a la función objetivo `setX
 
 ```solidity
 function callSetX(address payable _addr, uint256 x) public payable {
-    // Lamar a setX(), y enviar ETH
+    // Llamar a setX(), y enviar ETH
 	(bool success, bytes memory data) = _addr.call{value: msg.value}(
 		abi.encodeWithSignature("setX(uint256)", x)
 	);
 
-	emit Response(success, data); //emiter evento
+	emit Response(success, data); //emitir evento
 }
 ```
 
@@ -125,12 +125,12 @@ A continuación, se llama a la función `getX()`, y devolverá el valor de `_x` 
 
 ```solidity
 function callGetX(address _addr) external returns(uint256){
-    // Lammar getX()
+    // Llamar getX()
 	(bool success, bytes memory data) = _addr.call(
 		abi.encodeWithSignature("getX()")
 	);
 
-	emit Response(success, data); //emiter evento
+	emit Response(success, data); //emitir evento
 	return abi.decode(data, (uint256));
 }
 ```
@@ -150,7 +150,7 @@ function callNonExist(address _addr) external{
 		abi.encodeWithSignature("foo(uint256)")
 	);
 
-	emit Response(success, data); //emiter Evento
+	emit Response(success, data); //emitir evento
 }
 ```
 

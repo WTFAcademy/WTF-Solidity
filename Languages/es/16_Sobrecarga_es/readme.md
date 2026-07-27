@@ -18,7 +18,7 @@ La traducción al español ha sido realizada por Jonathan Díaz con el objetivo 
 
 Twitter: [@jonthdiaz](https://twitter.com/jonthdiaz)
 
-Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
 
 -----
 
@@ -42,7 +42,7 @@ function saySomething(string memory something) public pure returns(string memory
 ```
 
 Después de compilar, todas las funciones de sobrecarga se convierten en selectores de funciones diferentes debido a los diferentes tipos de parámetros.
-Para ver el contenido específico del selector de una función, consultar [WTF Solidity Tutorial: 29. Function Selector](https://github.com/AmazingAng/WTFSolidity/tree/main/29_Selector)
+Para ver el contenido específico del selector de una función, consultar [WTF Solidity Tutorial: 29. Function Selector](https://github.com/AmazingAng/WTF-Solidity/tree/main/29_Selector)
 
 Tomando el contrato `Overloading.sol` como ejemplo, después de compilar y desplegar en Remix.
 Después de llamar a las funciones de sobrecarga `saySomething()` y `saySomething(string memory something)` respectivamente,

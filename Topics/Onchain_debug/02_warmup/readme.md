@@ -2,7 +2,7 @@
 
 Author: [Sun](https://twitter.com/1nf0s3cpt)
 
-链上交易数据包含从简单的单笔交易转帐、1 个 DeFi 合约交互、多个 DeFi 合约交互、闪电贷套利、治理提案、跨链交易等等，这一节我们先来热身一下，先从简单的开始。我将介绍通常使用区块链浏览器 Etherscan 哪些讯息是我们所在意的，再来我们会使用交易分析工具 [Phalcon](https://phalcon.blocksec.com/) 看一下这些交易从简单的转帐、UniSWAP上 Swap、Curve 3pool 增加流动性、Compound 治理提案、闪电贷的调用差异。
+链上交易数据包含从简单的单笔交易转账、1 个 DeFi 合约交互、多个 DeFi 合约交互、闪电贷套利、治理提案、跨链交易等等，这一节我们先来热身一下，先从简单的开始。我将介绍通常使用区块链浏览器 Etherscan 哪些讯息是我们所在意的，再来我们会使用交易分析工具 [Phalcon](https://phalcon.blocksec.com/) 看一下这些交易从简单的转账、UniSWAP上 Swap、Curve 3pool 增加流动性、Compound 治理提案、闪电贷的调用差异。
 
 ## 开始进入热身篇
 - 首先环境上需要先安装 [Foundry](https://github.com/foundry-rs/foundry)，安装方法请参考 [instructions](https://book.getfoundry.sh/getting-started/installation.html).
@@ -16,7 +16,7 @@ Author: [Sun](https://twitter.com/1nf0s3cpt)
     -  Input Data: 交易的原始 Input 资料，可以看到呼叫什么 Function 和带入什么 Value
 - 如果还不知道常用工具有哪些可以回顾第一课交易分析[工具篇](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main/academy/onchain_debug/01_tools)
 
-## 链上转帐
+## 链上转账
 ![图片](https://user-images.githubusercontent.com/52526645/211021954-6c5828be-7293-452b-8ef6-a268db54b932.png)
 从上图[例子](https://etherscan.io/tx/0x836ef3d01a52c4b9304c3d683f6ff2b296c7331b6fee86e3b116732ce1d5d124)可以解读为:
 
@@ -48,7 +48,7 @@ Interacted With (To): 这个例子是一个 MEV Bot 合约呼叫 Uniswap 合约�
 
 ERC-20 Tokens Transferred: Token 交换的过程
 
-透过 [phalcon](https://phalcon.blocksec.com/tx/eth/0x1cd5ceda7e2b2d8c66f8c5657f27ef6f35f9e557c8d1532aa88665a37130da84) 来看: MEV Bot 呼叫 Uniswap V2 USDT/UNDEAD 交易对合约呼叫 [swap](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/pair#swap-1) 函示来进行代币兑换。
+透过 [phalcon](https://phalcon.blocksec.com/tx/eth/0x1cd5ceda7e2b2d8c66f8c5657f27ef6f35f9e557c8d1532aa88665a37130da84) 来看: MEV Bot 呼叫 Uniswap V2 USDT/UNDEAD 交易对合约呼叫 [swap](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/pair#swap-1) 函数来进行代币兑换。
 
 ![图片](https://user-images.githubusercontent.com/52526645/211029737-4a606d32-2c96-41e9-aef7-82fe1fb4b21d.png)
 
@@ -121,7 +121,7 @@ Foundry 的 cheatcodes 在我们做链上分析必须使用到的，这边我介
 - deal: 设定测试钱包余额 
     -  设定 ETH 余额 `deal(address(this), 3 ether);`
     -  设定 Token 余额 `deal(address(USDC), address(this), 1 * 1e18);`
-- prank: 模拟指定钱包身份，只有在下一个呼叫有效，下一个 msg.sender 是会所指定的钱包，例如使用巨鲸钱包转帐
+- prank: 模拟指定钱包身份，只有在下一个呼叫有效，下一个 msg.sender 是上述指定的钱包，例如使用巨鲸钱包转账
 - startPrank: 模拟指定钱包身份，在没有执行`stopPrank()`之前，所有 msg.sender 都会是指定的钱包地址
 - label: 将钱包地址标签化，方便在使用 Foundry debug 时提高可读性
 - roll: 调整区块高度

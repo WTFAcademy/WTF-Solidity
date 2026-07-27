@@ -20,7 +20,7 @@ La traducción al español ha sido realizada por Jonathan Díaz con el objetivo 
 
 Twitter: [@jonthdiaz](https://twitter.com/jonthdiaz)
 
-Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
 -----
 
 `CREATE2` es un opcode que nos ayuda a predecir la dirección del contrato inteligente antes de que se despliegue en la red de Ethereum, y `Uniswap` creó el contrato `Pair` con `CREATE2` en lugar de `CREATE`.

@@ -4,7 +4,7 @@ tags:
   - solidity
   - erc20
   - eip712
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF A simple introduction to Solidity: 53. ERC-2612 ERC20Permit
@@ -183,7 +183,7 @@ contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
 
 1. Deploy the `ERC20Permit` contract and set both `name` and `symbol` to `WTFPermit`.
 
-2. Run `signERC20Permit.html` and change the `Contract Address` to the deployed `ERC20Permit` contract address. Other information is given below. Then click the `Connect Metamask` and `Sign Permit` buttons in sequence to sign, and obtain `r`, `s`, and `v` for contract verification. To sign, use the wallet that deploys the contract, such as the Remix test wallet:
+2. Run `signERC20Permit.html` and change the `Contract Address` to the deployed `ERC20Permit` contract address. Other information is given below. Then click the `Connect MetaMask` and `Sign Permit` buttons in sequence to sign, and obtain `r`, `s`, and `v` for contract verification. To sign, use the wallet that deploys the contract, such as the Remix test wallet:
 
     ```js
     owner: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4    spender: 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2

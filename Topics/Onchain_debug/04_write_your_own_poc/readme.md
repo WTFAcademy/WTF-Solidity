@@ -17,11 +17,11 @@ Author: [Sun](https://twitter.com/1nf0s3cpt)
         - 攻击者合约: `0x5cb11ce550a2e6c24ebfc8df86c5757b596e69c1`
         - MEV Bot合约: `0x64dd59d6c7f09dc05b472ce5cb961b6e10106e1d`
  ![图片](https://user-images.githubusercontent.com/52526645/211201456-8b6f7bca-677d-40a2-b81b-fd6af18f94fd.png)
-    - 我们展开其中一个 `pancakeCall` 看看，可以看到回调到攻击者的合约读取了 token0()的值为 BSC-USD，紧接者就进行 transfer BSC-USD 到攻击者的钱包，看到这边可以知道攻击者可能有权限或透过漏洞把 MEV Bot 合约上的资产都搬走，接下来就要找出攻击者是怎么利用的?
+    - 我们展开其中一个 `pancakeCall` 看看，可以看到回调到攻击者的合约读取了 token0()的值为 BSC-USD，紧接着就进行 transfer BSC-USD 到攻击者的钱包，看到这边可以知道攻击者可能有权限或透过漏洞把 MEV Bot 合约上的资产都搬走，接下来就要找出攻击者是怎么利用的?
     ![图片](https://user-images.githubusercontent.com/52526645/211201744-9895803a-5f72-4f14-b147-b67b204bee75.png)
-    - 因为前面有提到 MEV Bot 合约未开源，所以这边我们可以使用[第一课](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main/academy/onchain_debug/01_tools)介绍的反编译工具 [Dedaub](https://library.dedaub.com/decompile)，来分析看看可不可以发现到什么. 首先先到 [Bscscan](https://bscscan.com/address/0x64dd59d6c7f09dc05b472ce5cb961b6e10106e1d#code) 上把合约 bytecodes 贴到 Dedaub 反编译，如下图我们可以看到 `pancakeCall` 函式权限设定为 public，就是公开每个人都可以调用，在闪电贷的回调公开是很正常应该没太大问题，但是可以看到红色框起来的地方，执行了一个 `0x10a` 函示，再往下追看看.
+    - 因为前面有提到 MEV Bot 合约未开源，所以这边我们可以使用[第一课](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main/academy/onchain_debug/01_tools)介绍的反编译工具 [Dedaub](https://library.dedaub.com/decompile)，来分析看看可不可以发现到什么. 首先先到 [Bscscan](https://bscscan.com/address/0x64dd59d6c7f09dc05b472ce5cb961b6e10106e1d#code) 上把合约 bytecodes 贴到 Dedaub 反编译，如下图我们可以看到 `pancakeCall` 函式权限设定为 public，就是公开每个人都可以调用，在闪电贷的回调公开是很正常应该没太大问题，但是可以看到红色框起来的地方，执行了一个 `0x10a` 函数，再往下追看看.
     ![图片](https://user-images.githubusercontent.com/52526645/211202573-b4a4847d-a617-42c8-84d0-0f2dbd38a632.png)
-   - `0x10a` 函示逻辑如下图，可以看到关键看到红色框起来的地方，先读取攻击者合约上的 token0 是什么代币然后带入转帐函式 `transfer`，在函式中第一个参数接收者地址 `address(MEM[varg0.data])` 是在 `pancakeCall` 的 `varg3 (_data)` 可被控制的，所以关键漏洞问题就在这边.
+   - `0x10a` 函数逻辑如下图，可以看到可以看到红色框起来的地方，先读取攻击者合约上的 token0 是什么代币然后带入转账函式 `transfer`，在函式中第一个参数接收者地址 `address(MEM[varg0.data])` 是在 `pancakeCall` 的 `varg3 (_data)` 可被控制的，所以关键漏洞问题就在这边.
    
 <div align=center>
 <img src="https://user-images.githubusercontent.com/52526645/211204177-fbebe377-23b0-4b0c-bb3e-dcb64dba2afc.png" alt="Cover" width="80%"/>

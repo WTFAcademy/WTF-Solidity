@@ -80,7 +80,7 @@ Modos de ataque mais comuns:
     * Causa raiz: falta de mecanismo de verificação
     * Por exemplo: [Rikkei Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220415-rikkei-finance---access-control--price-oracle-manipulation)
 2. Através de empréstimos relâmpago, um atacante pode drenar a liquidez, resultando em informações de preço incorretas em um oráculo.
-    * Isso é mais comumente visto em chamadas de funções como GetPrice, Swap, StackingReward, Transfer (com taxa de queima), etc.
+    * Isso é mais comumente visto em chamadas de funções como GetPrice, Swap, StakingReward, Transfer (com taxa de queima), etc.
     * Causa raiz: Protocolos que usam oráculos inseguros/comprometidos ou o oráculo não implementou recursos de preço médio ponderado pelo tempo.
     * Exemplo: [One Ring Finance](https://github.com/SunWeb3Sec/DeFiHackLabs#20220321-onering-finance---flashloan--price-oracle-manipulation)
 

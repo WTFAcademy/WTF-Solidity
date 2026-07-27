@@ -164,7 +164,7 @@ curl -H 'Content-Type: application/json' --data' {"jsonrpc": "2.0", "id": 1, "me
 
 #### fork主网
 
-这里的地址填入你alchemy的的主网地址即可
+这里的地址填入你alchemy的主网地址即可
 
 没有的话申请一个 [Alchemy - Blockchain APIs and Node Infrastructure](https://alchemy.com/?r=7ad384cba6732c9d) 或者参考 [Infura, 连接链下与链上的桥梁](https://github.com/AmazingAng/WTF-Solidity/tree/main/Topics/Tools/TOOL02_Infura/readme.md) 申请一个infura的链接。
 

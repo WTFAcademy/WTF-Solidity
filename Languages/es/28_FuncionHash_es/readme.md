@@ -18,7 +18,7 @@ La traducción al español ha sido realizada por Jonathan Díaz con el objetivo 
 
 Twitter: [@jonthdiaz](https://twitter.com/jonthdiaz)
 
-Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
 ---
 
 La función hash es un concepto criptográfico. Puede convertir un mensaje de longitud arbitraria en un valor de longitud fija. Este valor también se llama hash. En esta lección, se presentará brevemente la función hash y su aplicación en solidity.

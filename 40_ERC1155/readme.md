@@ -90,7 +90,7 @@ interface IERC1155 is IERC165 {
     function balanceOf(address account, uint256 id) external view returns (uint256);
 
     /**
-     * @dev 批量持仓查询，`accounts`和`ids`数组的长度要想等。
+     * @dev 批量持仓查询，`accounts`和`ids`数组的长度要相等。
      */
     function balanceOfBatch(address[] calldata accounts, uint256[] calldata ids)
         external
@@ -151,7 +151,7 @@ interface IERC1155 is IERC165 {
 ### `IERC1155`函数
 - `balanceOf()`：单币种余额查询，返回`account`拥有的`id`种类的代币的持仓量。
 - `balanceOfBatch()`：多币种余额查询，查询的地址`accounts`数组和代币种类`ids`数组的长度要相等。
-- `setApprovalForAll()`：批量授权，将调用者的代币授权给`operator`地址。。
+- `setApprovalForAll()`：批量授权，将调用者的代币授权给`operator`地址。
 - `isApprovedForAll()`：查询批量授权信息，如果授权地址`operator`被`account`授权，则返回`true`。
 - `safeTransferFrom()`：安全单币转账，将`amount`单位`id`种类的代币从`from`地址转账给`to`地址。如果`to`地址是合约，则会验证是否实现了`onERC1155Received()`接收函数。
 - `safeBatchTransferFrom()`：安全多币转账，与单币转账类似，只不过转账数量`amounts`和代币种类`ids`变为数组，且长度相等。如果`to`地址是合约，则会验证是否实现了`onERC1155BatchReceived()`接收函数。
@@ -623,7 +623,7 @@ contract BAYC1155 is ERC1155{
 
 ![mint1](./img/40-3.jpg)
 
-`blanceOf`一栏中输入账户地址和`id`查看对应持仓
+`balanceOf`一栏中输入账户地址和`id`查看对应持仓
 
 ![mint2](./img/40-4.jpg)
 

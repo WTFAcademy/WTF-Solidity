@@ -36,7 +36,7 @@ tags:
 
 ## 闪电贷实战
 
-下面，我们分别介绍如何在Uniswap V2，Uniswap V3，和AAVE V3的实现闪电贷合约。
+下面，我们分别介绍如何实现Uniswap V2、Uniswap V3 和 AAVE V3 的闪电贷合约。
 
 ### 1. Uniswap V2闪电贷
 
@@ -161,7 +161,7 @@ contract UniswapV2FlashloanTest is Test {
     }
 
     function testFlashloan() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 1e18);
         // 闪电贷借贷金额
@@ -171,7 +171,7 @@ contract UniswapV2FlashloanTest is Test {
 
     // 手续费不足，会revert
     function testFlashloanFail() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 3e17);
         // 闪电贷借贷金额
@@ -327,7 +327,7 @@ contract UniswapV2FlashloanTest is Test {
     }
 
     function testFlashloan() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 1e18);
                 
@@ -340,7 +340,7 @@ contract UniswapV2FlashloanTest is Test {
 
     // 手续费不足，会revert
     function testFlashloanFail() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 1e17);
         // 闪电贷借贷金额
@@ -427,7 +427,7 @@ contract AaveV3Flashloan {
         // flashloan 逻辑，这里省略
 
         // 计算flashloan费用
-        // fee = 5/1000 * amount
+        // fee = 5/10000 * amount
         uint fee = (amount * 5) / 10000 + 1;
         uint amountToRepay = amount + fee;
 
@@ -460,7 +460,7 @@ contract UniswapV2FlashloanTest is Test {
     }
 
     function testFlashloan() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 1e18);
         // 闪电贷借贷金额
@@ -470,7 +470,7 @@ contract UniswapV2FlashloanTest is Test {
 
     // 手续费不足，会revert
     function testFlashloanFail() public {
-        // 换weth，并转入flashloan合约，用做手续费
+        // 换weth，并转入flashloan合约，用作手续费
         weth.deposit{value: 1e18}();
         weth.transfer(address(flashloan), 4e16);
         // 闪电贷借贷金额

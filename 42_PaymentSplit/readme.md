@@ -84,7 +84,7 @@ contract PaymentSplit{
 
 分账合约中共有`6`个函数：
 
-- 构造函数：始化受益人数组`_payees`和分账份额数组`_shares`，其中数组长度不能为0，两个数组长度要相等。_shares中元素要大于0，_payees中地址不能为0地址且不能有重复地址。
+- 构造函数：初始化受益人数组`_payees`和分账份额数组`_shares`，其中数组长度不能为0，两个数组长度要相等。_shares中元素要大于0，_payees中地址不能为0地址且不能有重复地址。
 - `receive()`：回调函数，在分账合约收到`ETH`时释放`PaymentReceived`事件。
 - `release()`：分账函数，为有效受益人地址`_account`分配相应的`ETH`。任何人都可以触发这个函数，但`ETH`会转给受益人地址`account`。调用了releasable()函数。
 - `releasable()`：计算一个受益人地址应领取的`ETH`。调用了`pendingPayment()`函数。

@@ -1,8 +1,8 @@
-## 16 dicas de segurança para programadores Solidity do projeto Metamask
+## 16 dicas de segurança para programadores Solidity do projeto MetaMask
 
 **Texto original**: [Solidity Best Practices for Smart Contract Security](https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security/)
 
-**Autor original**: Consensys (projeto Metamask)
+**Autor original**: Consensys (projeto MetaMask)
 
 **Tradução**: [0xAA](https://twitter.com/0xAA_Science)
 
@@ -11,7 +11,7 @@
 
 > Introdução:
 >
-> Este é um blog escrito pelo projeto Metamask (Consensys) em agosto de 2020, sobre segurança de contratos inteligentes. Ele fornece 16 dicas de segurança para programadores Solidity, incluindo exemplos de código.
+> Este é um blog escrito pelo projeto MetaMask (Consensys) em agosto de 2020, sobre segurança de contratos inteligentes. Ele fornece 16 dicas de segurança para programadores Solidity, incluindo exemplos de código.
 >
 > Este artigo foi escrito há um ano e meio, quando a versão do Solidity era 0.5, agora já estamos na versão 0.8, muitas funções são diferentes. Mas muitas das dicas ainda são aplicáveis até hoje e me ajudaram muito depois de lê-las. Não encontrei uma tradução em chinês online, então fiz uma tradução simples e marquei as possíveis diferenças de versão para ajudar os desenvolvedores chineses a aprenderem.
 >

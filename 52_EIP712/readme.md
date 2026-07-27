@@ -4,7 +4,7 @@ tags:
   - solidity
   - erc20
   - eip712
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Solidity极简入门: 52. EIP712 类型化数据签名
@@ -59,7 +59,7 @@ EIP712 的应用一般包含链下签名（前端或脚本）和链上验证（�
     };
     ```
 
-2. 你需要根据使用场景自定义一个签名的数据类型，他要与合约匹配。在 `EIP712Storage` 例子中，我们定义了一个 `Storage` 类型，它有两个成员: `address` 类型的 `spender`，指定了可以修改变量的调用者；`uint256` 类型的 `number`，指定了变量修改后的值。
+2. 你需要根据使用场景自定义一个签名的数据类型，它要与合约匹配。在 `EIP712Storage` 例子中，我们定义了一个 `Storage` 类型，它有两个成员: `address` 类型的 `spender`，指定了可以修改变量的调用者；`uint256` 类型的 `number`，指定了变量修改后的值。
 
     ```js
     const types = {
@@ -196,7 +196,7 @@ contract EIP712Storage {
     http-server
     ```
 
-    在浏览器中打开 `http://127.0.0.1:8080` 就可以访问了。 然后将 `Contract Address` 改为部署的 `EIP712Storage` 合约地址，然后依次点击 `Connect Metamask` 和 `Sign Permit` 按钮签名。签名要使用部署合约的钱包，比如 Remix 测试钱包：
+    在浏览器中打开 `http://127.0.0.1:8080` 就可以访问了。 然后将 `Contract Address` 改为部署的 `EIP712Storage` 合约地址，然后依次点击 `Connect MetaMask` 和 `Sign Permit` 按钮签名。签名要使用部署合约的钱包，比如 Remix 测试钱包：
 
     ```js
     public_key: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
@@ -209,4 +209,4 @@ contract EIP712Storage {
 
 ## 总结
 
-这一讲，我们介绍了 EIP712 类型化数据签名，一种更先进、安全的签名标准。在请求签名时，钱包会展示签名消息的原始数据，用户可以在验证数据后签名。该标准应用广泛，在 Metamask，Uniswap 代币对，DAI 稳定币等场景均有使用，希望大家好好掌握。
+这一讲，我们介绍了 EIP712 类型化数据签名，一种更先进、安全的签名标准。在请求签名时，钱包会展示签名消息的原始数据，用户可以在验证数据后签名。该标准应用广泛，在 MetaMask，Uniswap 代币对，DAI 稳定币等场景均有使用，希望大家好好掌握。

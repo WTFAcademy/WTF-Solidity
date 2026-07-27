@@ -451,7 +451,7 @@ contract SimpleSwap is ERC20 {
    
    ![swap](img/56-10.jpg)
 
-7. 调用 `SimpleSwap` 合约的 `reserve0` 和 `reserve1` 函数查看合约中的代币储备粮，应为 200 和 50。上一步我们利用 100 单位的 token0 交换了 50 单位的 token 1（$\frac{100*100}{100+100}=50$）。
+7. 调用 `SimpleSwap` 合约的 `reserve0` 和 `reserve1` 函数查看合约中的代币储备量，应为 200 和 50。上一步我们利用 100 单位的 token0 交换了 50 单位的 token 1（$\frac{100*100}{100+100}=50$）。
    
    ![reserveAfter](img/56-11.jpg)
 

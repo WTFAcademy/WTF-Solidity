@@ -6,7 +6,7 @@ tags:
   - erc4626
   - defi
   - vault
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Solidity极简入门: 51. ERC4626 代币化金库标准
@@ -130,14 +130,14 @@ interface IERC4626 is IERC20, IERC20Metadata {
      * @dev 存款函数: 用户向金库存入 assets 单位的基础资产，然后合约铸造 shares 单位的金库额度给 receiver 地址
      *
      * - 必须释放 Deposit 事件.
-     * - 如果资产不能存入，必须revert，比如存款数额大大于上限等。
+     * - 如果资产不能存入，必须revert，比如存款数额大于上限等。
      */
     function deposit(uint256 assets, address receiver) external returns (uint256 shares);
 
     /**
      * @dev 铸造函数: 用户需要存入 assets 单位的基础资产，然后合约给 receiver 地址铸造 share 数量的金库额度
      * - 必须释放 Deposit 事件.
-     * - 如果全部金库额度不能铸造，必须revert，比如铸造数额大大于上限等。
+     * - 如果全部金库额度不能铸造，必须revert，比如铸造数额大于上限等。
      */
     function mint(uint256 shares, address receiver) external returns (uint256 assets);
 
@@ -260,7 +260,7 @@ interface IERC4626 is IERC20, IERC20Metadata {
 
 下面，我们实现一个极简版的代币化金库合约：
 - 构造函数初始化基础资产的合约地址，金库份额的代币名称和符号。注意，金库份额的代币名称和符号要和基础资产有关联，比如基础资产叫 `WTF`，金库份额最好叫 `vWTF`。
-- 存款时，当用户向金库存 `x` 单位的基础资产，会铸造 `x` 单位（等量）的金库份额。
+- 存款时，当用户向金库存入 `x` 单位的基础资产，会铸造 `x` 单位（等量）的金库份额。
 - 取款时，当用户销毁 `x` 单位的金库份额，会提取 `x` 单位（等量）的基础资产。
 
 **注意**: 在实际使用时，要特别小心和会计逻辑相关函数的计算是向上取整还是向下取整，可以参考 [openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC4626.sol) 和 [solmate](https://github.com/transmissions11/solmate/blob/main/src/mixins/ERC4626.sol) 的实现。本节的教学例子中不考虑它。

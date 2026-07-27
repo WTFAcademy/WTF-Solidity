@@ -19,7 +19,7 @@ La traducción al español ha sido realizada por Jonathan Díaz con el objetivo 
 
 Twitter: [@jonthdiaz](https://twitter.com/jonthdiaz)
 
-Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTFSolidity](https://github.com/AmazingAng/WTFSolidity)
+Los códigos y tutoriales están como código abierto en GitHub: [github.com/AmazingAng/WTF-Solidity](https://github.com/AmazingAng/WTF-Solidity)
 -----
 
 En Ethereum, el usuario (cuenta externa, `EOA`) puede crear contratos inteligentes, y un contrato inteligente también puede crear nuevos contratos inteligentes. El intercambio descentralizado `Uniswap` crea un número infinito de contratos `Pair` con su contrato `Factory`. En esta lección se explica cómo crear nuevos contratos inteligentes en un contrato inteligente existente utilizando una versión simplificada de `Uniswap`.

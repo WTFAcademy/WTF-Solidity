@@ -42,7 +42,7 @@
     AND token_a_symbol = 'DAI'
     AND project = 'Uniswap';
     ```
-3. 点击右下角的**Run**执行查询，得到最近的24h内通过uniswap购买DAI的的数量。
+3. 点击右下角的**Run**执行查询，得到最近的24h内通过uniswap购买DAI的数量。
 
 ![dune sql query](./img/3.png)
 

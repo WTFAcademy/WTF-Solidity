@@ -4,7 +4,7 @@ tags:
   - solidity
   - erc20
   - eip712
-  - openzepplin
+  - openzeppelin
 ---
 
 # WTF Solidity极简入门: 53. ERC-2612 ERC20Permit
@@ -63,7 +63,7 @@ pragma solidity ^0.8.0;
  */
 interface IERC20Permit {
     /**
-     * @dev 根据owner的签名, 将 `owenr` 的ERC20余额授权给 `spender`，数量为 `value`
+     * @dev 根据owner的签名, 将 `owner` 的ERC20余额授权给 `spender`，数量为 `value`
      */
     function permit(
         address owner,
@@ -184,7 +184,7 @@ contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
 
 1. 部署 `ERC20Permit` 合约，将 `name` 和 `symbol` 均设为 `WTFPermit`。
 
-2. 运行 `signERC20Permit.html`，将 `Contract Address` 改为部署的 `ERC20Permit` 合约地址，其他信息下面给出。然后依次点击 `Connect Metamask` 和 `Sign Permit` 按钮签名，并获取 `r`，`s`，`v`，用于合约验证。签名要使用部署合约的钱包，比如 Remix 测试钱包：
+2. 运行 `signERC20Permit.html`，将 `Contract Address` 改为部署的 `ERC20Permit` 合约地址，其他信息下面给出。然后依次点击 `Connect MetaMask` 和 `Sign Permit` 按钮签名，并获取 `r`，`s`，`v`，用于合约验证。签名要使用部署合约的钱包，比如 Remix 测试钱包：
 
     ```js
     owner: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4    spender: 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2

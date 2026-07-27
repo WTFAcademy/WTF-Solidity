@@ -282,7 +282,7 @@ require("@nomicfoundation/hardhat-toolbox");
 const ALCHEMY_API_KEY = "KEY";
 
 // Substitua esta chave privada pela chave privada da sua conta de teste
-// Exporte sua chave privada do Metamask, abra o Metamask e vá para "Detalhes da conta"> "Exportar chave privada"
+// Exporte sua chave privada do MetaMask, abra o MetaMask e vá para "Detalhes da conta"> "Exportar chave privada"
 // Atenção: nunca coloque ETH real em uma conta de teste
 const GOERLI_PRIVATE_KEY = "YOUR GOERLI PRIVATE KEY";
 

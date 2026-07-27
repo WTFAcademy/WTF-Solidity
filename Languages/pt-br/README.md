@@ -296,7 +296,7 @@ O roteiro será definido com base no número de estrelas deste repositório:
 
 ### Traduções
 
-**Aula 1: 16 Sugestões de Segurança da Metamask para Programadores Solidity**: [Artigo](./Topics/Translation/Consensys2020)
+**Aula 1: 16 Sugestões de Segurança da MetaMask para Programadores Solidity**: [Artigo](./Topics/Translation/Consensys2020)
 
 **Aula 2: Mergulhando no EVM**: [Artigo](./Topics/Translation/DiveEVM2017)
 

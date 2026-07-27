@@ -25,7 +25,7 @@ tags:
 
 ## 数据位置
 
-Solidity数据存储位置有三类：`storage`，`memory`和`calldata`。不同存储位置的`gas`成本不同。`storage`类型的数据存在链上，类似计算机的硬盘，消耗`gas`多；`memory`和`calldata`类型的临时存在内存里，消耗`gas`少。整体消耗`gas`从多到少依次为：`storage` > `memory` > `calldata`。大致用法：
+Solidity数据存储位置有三类：`storage`，`memory`和`calldata`。不同存储位置的`gas`成本不同。`storage`类型的数据存在链上，类似计算机的硬盘，消耗`gas`多；`memory`和`calldata`类型的数据临时存储在内存里，消耗`gas`少。整体消耗`gas`从多到少依次为：`storage` > `memory` > `calldata`。大致用法：
 
 1. `storage`：合约里的状态变量默认都是`storage`，存储在链上。
 
@@ -47,7 +47,7 @@ function fCalldata(uint[] calldata _x) public pure returns(uint[] calldata){
 
 ### 数据位置和赋值规则
 
-在不同存储类型相互赋值时候，有时会产生独立的副本（修改新变量不会影响原变量），有时会产生引用（修改新变量会影响原变量）。规则如下：
+在不同存储类型相互赋值的时候，有时会产生独立的副本（修改新变量不会影响原变量），有时会产生引用（修改新变量会影响原变量）。规则如下：
 
 - 赋值本质上是创建**引用**指向本体，因此修改本体或者是引用，变化可以被同步：
 
@@ -147,7 +147,7 @@ function global() external view returns(address, uint, bytes memory){
 
 #### 以太单位
 
-`Solidity`中不存在小数点，以`0`代替为小数点，来确保交易的精确度，并且防止精度的损失，利用以太单位可以避免误算的问题，方便程序员在合约中处理货币交易。
+`Solidity`中不存在小数点，用`0`表示小数点，来确保交易的精确度，并且防止精度的损失，利用以太单位可以避免误算的问题，方便程序员在合约中处理货币交易。
 
 - `wei`: 1
 - `gwei`: 1e9 = 1000000000

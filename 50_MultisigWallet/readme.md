@@ -131,7 +131,7 @@ Gnosis Safe多签钱包是以太坊最流行的多签钱包，管理近400亿美
     /// @param to 目标合约地址
     /// @param value msg.value，支付的以太坊
     /// @param data calldata
-    /// @param signatures 打包的签名，对应的多签地址由小到达，方便检查。 ({bytes32 r}{bytes32 s}{uint8 v}) (第一个多签的签名, 第二个多签的签名 ... )
+    /// @param signatures 打包的签名，对应的多签地址由小到大，方便检查。 ({bytes32 r}{bytes32 s}{uint8 v}) (第一个多签的签名, 第二个多签的签名 ... )
     function execTransaction(
         address to,
         uint256 value,
@@ -299,4 +299,4 @@ Gnosis Safe多签钱包是以太坊最流行的多签钱包，管理近400亿美
 
 这一讲，我们介绍了多签钱包，并写了一个极简版的多签钱包合约，仅有不到150行代码。
 
-我与多签钱包很有缘分，2021年因为PeopleDAO创建国库而学习了Gnosis Safe并写了中英文的[使用教程](https://peopledao.mirror.xyz/nFCBXda8B5ZxQVqSbbDOn2frFDpTxNVtdqVBXGIjj0s)，之后很幸运的做了3个国库的多签人维护资产安全，现在又成为了Safe的守护者深度参与治理。希望大家的资产都更加安全。
+我与多签钱包很有缘分，2021年因为PeopleDAO创建国库而学习了Gnosis Safe并写了中英文的[使用教程](https://peopledao.mirror.xyz/nFCBXda8B5ZxQVqSbbDOn2frFDpTxNVtdqVBXGIjj0s)，之后很幸运地做了3个国库的多签人维护资产安全，现在又成为了Safe的守护者深度参与治理。希望大家的资产都更加安全。
