@@ -298,7 +298,7 @@
 
 **第4讲：BAYC主合约和严重漏洞** [代码](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/ERC721/BAYC.sol) | [文章](https://mirror.xyz/wtfacademy.eth/_buBOQflWtHDpLbg18Fp8zLe8AmLiPka2y-UhppK_u0)
 
-**第5讲：Loot** [代码](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/ERC721/5_Loot/Loot.sol) | [文章](https://mirror.xyz/wtfacademy.eth/-Bc_vjP9EX-wg6chtUFAz0zm5v-jaIekMlOlqHJ_IhE)
+**第5讲：Loot** [代码](https://github.com/AmazingAng/WTF-Solidity/blob/main/Topics/ERC721/5_Loot/Loot.sol) | [文章](https://github.com/AmazingAng/WTF-Solidity/tree/main/Topics/ERC721/5_Loot/readme.md)
 
 ### 翻译
 
