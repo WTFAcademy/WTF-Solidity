@@ -59,7 +59,7 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 
 EVMはSolidityのイベントを保管する為に`Log`を使用します。各ログは2つの部品を含んでいます: `topics`と`data`です。
 
-![](img/12-3.png)
+![](./img/12-3_ja.png)
 
 ### `Topics`
 
