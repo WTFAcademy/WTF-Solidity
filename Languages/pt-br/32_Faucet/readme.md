@@ -20,7 +20,7 @@ O primeiro exemplo de faucet de tokens foi o faucet de Bitcoin (BTC): hoje, um B
 
 ## Contrato Faucet ERC20
 
-Neste exemplo, vamos implementar uma versão simplificada de um faucet ERC20. A lógica é simples: transferimos alguns tokens ERC20 para o contrato do faucet e os usuários podem solicitar 100 unidades desses tokens através da função `requestToken()`, com cada endereço podendo solicitar apenas uma vez.
+Neste exemplo, vamos implementar uma versão simplificada de um faucet ERC20. A lógica é simples: transferimos alguns tokens ERC20 para o contrato do faucet e os usuários podem solicitar 100 unidades desses tokens através da função `requestTokens()`, com cada endereço podendo solicitar apenas uma vez.
 
 ### Variáveis de Estado
 
