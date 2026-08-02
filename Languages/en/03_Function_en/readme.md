@@ -16,7 +16,7 @@ Codes and tutorials are open source on GitHub: [github.com/AmazingAng/WTF-Solidi
 Here's the format of a function in Solidity:
 
 ```solidity
-    function <function name>(<parameter types>) [internal|external] [pure|view|payable] [returns (<return types>)]
+    function <function name>(<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
 ```
 
 It may seem complex, but let's break it down piece by piece (square brackets indicate optional keywords):
@@ -38,7 +38,7 @@ It may seem complex, but let's break it down piece by piece (square brackets ind
 
    - `internal`: Can only be accessed internally and by contracts deriving from it.
 
-    **Note 1**: `public` is the default visibility for functions.
+    **Note 1**: Functions have no default visibility — you must specify one of `public`, `private`, `internal`, or `external` explicitly.
     
     **Note 2**: `public|private|internal` can be also used on state variables. Public variables will automatically generate `getter` functions for querying values. 
     

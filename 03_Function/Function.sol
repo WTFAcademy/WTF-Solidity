@@ -6,7 +6,7 @@ contract FunctionTypes{
     constructor() payable {}
 
     // 函数类型
-    // function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]
+    // function (<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
     // 默认function
     function add() external{
         number = number + 1;
