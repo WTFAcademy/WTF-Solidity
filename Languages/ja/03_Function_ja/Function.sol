@@ -6,7 +6,7 @@ contract FunctionTypes{
     constructor() payable {}
 
     // function type（関数型）
-    // function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]
+    // function (<parameter types>) {internal|external|public|private} [pure|view|payable] [returns (<return types>)]
     // default function（デフォルトの関数）
     function add() external{
         number = number + 1;
