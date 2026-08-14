@@ -113,7 +113,7 @@ Caso contrário, o preço será calculado com base na redução gradual do preç
             "o leilão ainda não começou"
         ); // Verifica se o timestamp de início foi configurado e se o leilão começou
         require(
-            totalSupply() + quantity <= COLLECTOIN_SIZE,
+            totalSupply() + quantity <= COLLECTION_SIZE,
             "não há quantidade restante suficiente para criar a quantidade desejada de NFTs"
         ); // Verifica se a quantidade excede o número limite de NFTs
 
@@ -154,4 +154,3 @@ Caso contrário, o preço será calculado com base na redução gradual do preç
 
 ## Conclusão
 Nesta lição, introduzimos o leilão holandês e explicamos como utilizar o contrato simplificado `DutchAuction` para vender NFTs do padrão ERC721 através de um leilão holandês. O item NFT mais caro que já arrematei foi uma música NFT do músico Jonathan Mann. Qual foi o seu?
-

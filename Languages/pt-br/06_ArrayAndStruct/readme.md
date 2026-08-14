@@ -49,7 +49,7 @@ Existem algumas regras a serem seguidas ao criar arrays no Solidity:
     bytes memory array9 = new bytes(9);
     ```
 
-- Arrays literais são expressões de array escritas entre colchetes para inicializar o array, e o tipo de cada elemento é determinado pelo tipo do primeiro elemento. Por exemplo, em `[1,2,3]`, todos os elementos são do tipo `uint8`, porque no Solidity, se um valor não tem um tipo especificado, o tipo padrão é o tipo mínimo desse tipo, e o tipo mínimo para `uint` é `uint8`. Enquanto em `[uint(1),2,3]`, todos os elementos são do tipo `uint`, porque o primeiro elemento definiu o tipo como `uint`.
+- Arrays literais são arrays escritos na forma de uma ou mais expressões entre colchetes, e não são atribuídos imediatamente a variáveis. Por exemplo, `[uint(1),2,3]`. O tipo de cada elemento é inferido a partir do primeiro elemento e do contexto ao redor. Se um valor não tiver um tipo especificado, o menor tipo será usado por padrão; por exemplo, `[1,2,3]` usa `uint8`, enquanto `[uint(1),2,3]` usa `uint`.
 
     No exemplo abaixo, se a conversão para `uint` não for feita no array passado para a função `g()`, um erro será gerado.
 

@@ -20,7 +20,7 @@ Los códigos y tutoriales están como código abierto en GitHub: [github.com/Ama
 Este es el formato de una función en Solidity:
 
 ```solidity
-    function <nombre de la función>(<tipos de los parámetros>) [internal|external] [pure|view|payable] [returns (<tipos de retorno>)]
+    function <nombre de la función>(<tipos de los parámetros>) {internal|external|public|private} [pure|view|payable] [returns (<tipos de retorno>)]
 ```
 
 Puede parecer complejo, pero desglosémoslo pieza por pieza (los corchetes cuadrados indican palabras clave opcionales):
@@ -42,7 +42,7 @@ Puede parecer complejo, pero desglosémoslo pieza por pieza (los corchetes cuadr
 
    - `internal`: Solo puede ser accedido internamente y por contratos que derivan de él.
 
-    **Nota 1**: `public` es la visibilidad predeterminada para las funciones.
+    **Nota 1**: Las funciones no tienen una visibilidad predeterminada; debes especificar explícitamente `public`, `private`, `internal` o `external`.
     
     **Nota 2**: `public|private|internal` también puede ser usado en variables de estado. Las variables públicas generarán automáticamente funciones `getter` para consultar valores.
     

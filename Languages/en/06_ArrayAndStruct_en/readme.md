@@ -51,7 +51,7 @@ In Solidity, there are some rules for creating arrays：
     bytes memory array9 = new bytes(9);
 ```
 
-- Array literal are arrays in the form of one or more expressions, and are not immediately assigned to variables; such as `[uint(1),2,3]` (the type of the first element needs to be declared, otherwise the type with the smallest storage space is used by default).
+- Array literals are arrays in the form of one or more expressions, and are not immediately assigned to variables; for example, `[uint(1),2,3]`. The type of each element is inferred from the first element and the surrounding context. If a value has no specified type, the smallest type is used by default; for example, `[1,2,3]` uses `uint8`, while `[uint(1),2,3]` uses `uint`.
 
 - When creating a dynamic array, you need an element-by-element assignment.
 
