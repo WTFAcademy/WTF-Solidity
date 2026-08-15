@@ -64,8 +64,8 @@ library MerkleProof {
 }
 
 contract MerkleTree is ERC721 {
-    // Raiz da árvore de Merkle
-    // Registre os endereços já mintados
+    bytes32 immutable public root; // Raiz da árvore de Merkle
+    mapping(address => bool) public mintedAddress; // Registre os endereços já mintados
 
     // Construtor, inicializa o nome, código e raiz da árvore Merkle da coleção NFT.
     constructor(string memory name, string memory symbol, bytes32 merkleroot)
@@ -79,10 +79,14 @@ contract MerkleTree is ERC721 {
     external
     {
         // Merkle verificação aprovada
+        require(_verify(_leaf(account), proof), "Invalid merkle proof");
         // O endereço não foi mintado antes.
+        require(!mintedAddress[account], "Already minted!");
         
         // Registre os endereços que foram mintados
+        mintedAddress[account] = true;
         // mint
+        _mint(account, tokenId);
     }
 
     // Calcular o valor de hash das folhas da árvore de Merkle

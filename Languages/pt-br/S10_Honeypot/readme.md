@@ -114,7 +114,8 @@ Os tokens Pixiu são uma das fraudes mais comuns que os investidores enfrentam n
 
 5. Invista apenas em projetos que você conheça bem, faça sua própria pesquisa (DYOR).
 
+6. Use o Tenderly ou o Phalcon para simular a venda do token Pixiu em um fork; se a simulação falhar, considere isso um forte indício de que o token pode ser um Pixiu.
+
 ## Conclusão
 
 Nesta lição, abordamos contratos Pixiu e métodos para evitar cair em armadilhas Pixiu. Os contratos Pixiu são uma das adversidades mais comuns que investidores enfrentam no mundo cripto, sendo bastante odiados. Recentemente, também surgiram Pixiu NFTs, onde projetos maliciosos alteram as funções de transferência ou autorização do ERC721 para impedir que os investidores vendam. Compreender os princípios dos contratos Pixiu e as medidas de prevenção pode reduzir significativamente a probabilidade de adquirir um contrato Pixiu, tornando seus fundos mais seguros. Mantenha-se sempre aprendendo.
-

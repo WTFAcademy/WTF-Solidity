@@ -116,7 +116,7 @@ The `MerkleProof` library contains three functions:
 
 3. The `_hashPair()` function: It uses the `keccak256()` function to calculate the hash (sorted) of the two child nodes corresponding to the non-root node.
 
-We input `address 0`, `root`, and the corresponding `proof` to the `verify()` function, which will return `true` because `address 0` is in the `Merkle Tree` with the root of `root`, and the `proof` is correct. If any of these values are changed, it will return `false`.
+We input the hash of `address 0` (the leaf), `root`, and the corresponding `proof` to the `verify()` function, which will return `true` because the hash of `address 0` is in the `Merkle Tree` with the root of `root`, and the `proof` is correct. If any of these values are changed, it will return `false`.
 
 Using `Merkle Tree` to distribute NFT whitelists:
 

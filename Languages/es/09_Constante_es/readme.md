@@ -45,7 +45,7 @@ Las variables de tipo `immutable` pueden inicializarse durante la declaración o
     uint256 public immutable IMMUTABLE_TEST;
 ```
 
-Se pueden inicializar las variables de tipo `immutable` usando una variable global como `address(this)`, `block`.`number`, o una función personalizada. En el siguiente ejemplo, se usa la función `test()` para inicializar la variable `IMMUTABLE_TEST` con un valor de `9`:
+Se pueden inicializar las variables de tipo `immutable` usando una variable global como `address(this)`, `block.number`, o una función personalizada. En el siguiente ejemplo, se usa la función `test()` para inicializar la variable `IMMUTABLE_TEST` con un valor de `9`:
 
 ``` solidity
      // Las variables inmutables se inicializan en el constructor, para que puedan ser usadas

@@ -89,7 +89,7 @@ A biblioteca `MerkleProof` possui três funções:
 
 3. A função `_hashPair()`: calcula o hash dos dois nós filhos (ordenados) em um nó não folha.
 
-Vamos inserir o `endereço0`, a `root` e a `proof` na função `verify()`. Se os valores estiverem corretos, a função retornará `true`. Qualquer valor alterado resultará em `false`.
+Vamos inserir o hash de `endereço0` (o leaf), a `root` e a `proof` na função `verify()`. Se os valores estiverem corretos, a função retornará `true`. Qualquer valor alterado resultará em `false`.
 
 ## Distribuição de uma lista branca de `NFT` usando `Merkle Tree`
 

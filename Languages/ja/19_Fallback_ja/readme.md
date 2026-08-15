@@ -64,8 +64,6 @@ receive() external payable {
 fallback() external payable { ... }
 ```
 
-````solidity
-
 私たちは`fallback()`関数を定義し、それがトリガーされると`fallbackCalled`イベントを発生させ、`msg.sender`、`msg.value`、`msg.data`を出力します：
 
 ```solidity
@@ -75,7 +73,7 @@ event fallbackCalled(address Sender, uint Value, bytes Data);
 fallback() external payable{
     emit fallbackCalled(msg.sender, msg.value, msg.data);
 }
-````
+```
 
 ## receive と fallback の違い
 
@@ -97,7 +95,7 @@ receive()あるか?   fallback()
 receive()   fallback()
 ```
 
-簡単にいうと、コントラクトが`ETH`を受け取るとき、`msg.data`が空で`receive()`が存在する場合は`receive()`がトリガーされます。`msg.data`が空で`receive()`が存在しない場合は、`fallback()`がトリガーされます。この場合、`fallback()`は`payable`である必要があります。
+簡単にいうと、コントラクトが`ETH`を受け取るとき、`msg.data`が空で`receive()`が存在する場合は`receive()`がトリガーされます。`msg.data`が空でない、または`receive()`が存在しない場合は、`fallback()`がトリガーされます。この場合、`fallback()`は`payable`である必要があります。
 
 `receive()`と`payable fallback()`が存在しない場合、コントラクトに直接`ETH`を送信するとエラーが発生します（`payable`関数を使ってコントラクトに`ETH`を送信することはできます）。
 

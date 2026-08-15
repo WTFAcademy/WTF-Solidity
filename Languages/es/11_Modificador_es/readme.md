@@ -55,7 +55,7 @@ contract Parents {
 
 ![Iron Man's modifier](https://images.mirror-media.xyz/publication-images/nVwXsOVmrYu8rqvKKPMpg.jpg?height=630&width=1200)
 
-Se define un modificador llamado `onlyOwner`. Las Función que usen `OnlyOwner` solo pueden ser llamadas por el propietario (`owner`):
+Se define un modificador llamado `onlyOwner`. Las Función que usen `onlyOwner` solo pueden ser llamadas por el propietario (`owner`):
 ```solidity
    // define el modificador
    modifier onlyOwner {
@@ -73,7 +73,7 @@ A continuación, definamos una función `changeOwner`, que puede cambiar el prop
 ```
 
 ### Implementación de Ownable de OpenZeppelin:
-`OppenZeppelin` es una organización que mantiene una base de código estandarizada para `Solidity`, Su implementación estándar de `Ownable` está en [este enlace](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol).
+`OpenZeppelin` es una organización que mantiene una base de código estandarizada para `Solidity`, Su implementación estándar de `Ownable` está en [este enlace](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol).
 
 ## Demo en Remix
 Aquí, tomamos Owner.sol como ejemplo.
