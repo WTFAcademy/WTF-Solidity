@@ -26,6 +26,7 @@ contract ERC20 is IERC20 {
 
     // @dev 实现`transfer`函数，代币转账逻辑
     function transfer(address recipient, uint amount) public override returns (bool) {
+        require(recipient != address(0), "transfer to zero address");
         balanceOf[msg.sender] -= amount;
         balanceOf[recipient] += amount;
         emit Transfer(msg.sender, recipient, amount);
@@ -45,6 +46,7 @@ contract ERC20 is IERC20 {
         address recipient,
         uint amount
     ) public override returns (bool) {
+        require(recipient != address(0), "transfer to zero address");
         allowance[sender][msg.sender] -= amount;
         balanceOf[sender] -= amount;
         balanceOf[recipient] += amount;

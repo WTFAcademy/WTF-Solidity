@@ -19,7 +19,3 @@ contract DeleteContract {
         balance = address(this).balance;
     }
 }
-
-
-Revisar el balance del contrato después del despliegue
-Check the balance of contract after deployed

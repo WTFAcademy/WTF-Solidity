@@ -172,6 +172,7 @@ uint8 public decimals = 18; // 小数位数
 
     ```solidity
     function transfer(address recipient, uint amount) public override returns (bool) {
+        require(recipient != address(0), "transfer to zero address");
         balanceOf[msg.sender] -= amount;
         balanceOf[recipient] += amount;
         emit Transfer(msg.sender, recipient, amount);
@@ -197,6 +198,7 @@ uint8 public decimals = 18; // 小数位数
         address recipient,
         uint amount
     ) public override returns (bool) {
+        require(recipient != address(0), "transfer to zero address");
         allowance[sender][msg.sender] -= amount;
         balanceOf[sender] -= amount;
         balanceOf[recipient] += amount;
